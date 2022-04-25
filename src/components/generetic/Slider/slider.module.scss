@@ -1,0 +1,79 @@
+.slider {
+  position: relative;
+  width: calc(100% - 16px);
+  height: 24px;
+  margin: 0 auto 5px;
+  padding: 35px 0 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.rail, .track {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: $grey-bg2;
+  border-radius: 5px;
+}
+
+.track {
+  width: 0%;
+  background: $accent;
+}
+
+.handle {
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  left: 0;
+  margin-left: -7px;
+  border-radius: 50%;
+  background: $accent;
+  box-shadow: 0 0 5px rgba(#000, .5);
+  z-index: 2;
+  &:hover {
+    span {
+      opacity: 1;
+    }
+  }
+  span {
+    position: absolute;
+    font-size: 16px;
+    background: $grey-bg2;
+    border-radius: 3px;
+    line-height: 1em;
+    padding: 2px 5px;
+    bottom: calc(100% + 7px);
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 4px rgba(#000, .3);
+    transition: .2s;
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 10px;
+      height: 10px;
+      background: inherit;
+      border-radius: 1px;
+      left: 50%;
+      z-index: -1;
+      margin-left: -1px;
+      bottom: -24%;
+      transform: rotate(45deg) translateX(-50%);
+      transform-origin: center;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      left: 0;
+      bottom: -50%;
+    }
+  }
+}
+

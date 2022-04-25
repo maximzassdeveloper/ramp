@@ -1,0 +1,61 @@
+
+// Icon
+.icon-enter {
+  opacity: 0;
+  transform: scale(.7);
+  transition: .15s;
+}
+.icon-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: .15s;
+}
+.icon-exit {
+  opacity: 1;
+  transform: scale(1);
+  transition: .15s;
+}
+.icon-exit-active {
+  opacity: 0;
+  transform: scale(.7);
+  transition: .15s;
+}
+
+// Fade down
+.fadeDown-enter {
+  opacity: 0;
+  transform: translateY(5px);
+}
+.fadeDown-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: .2s;
+}
+.fadeDown-exit {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.fadeDown-exit-active {
+  opacity: 0;
+  transform: translateY(5px);
+  transition: .2s;
+}
+
+// Fade
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: .2s;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-done {
+  opacity: 0;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: .2s;
+}

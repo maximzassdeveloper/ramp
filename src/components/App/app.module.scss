@@ -1,0 +1,13 @@
+.wrapper {
+
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  padding-left: 62px;
+  background: $dark-bg;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+}

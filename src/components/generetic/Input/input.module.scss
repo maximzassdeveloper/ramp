@@ -1,0 +1,91 @@
+.input {
+  position: relative;
+  max-width: 100%;
+  margin-bottom: 5px;
+  input {
+    width: 100%;
+    max-width: 100%;
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background: $grey-bg;
+    border: 2px solid $grey-line;
+    transition: .2s;
+    &::placeholder {
+      color: $grey;
+    }
+    &:focus {
+      border-color: $accent;
+      box-shadow: 0 0 0 3px rgba($accent, .4);
+      & ~ div {
+        border-color: $accent;
+      }
+    }
+  }
+}
+
+.inputNumber {
+  position: relative;
+  &:hover {
+    .inputNumberArrows {
+      opacity: 1;
+    }
+  }
+  input {
+    padding-right: 12px + 20px;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &[type=number] {
+      -moz-appearance: textfield;
+    }
+  }
+  &Arrows {
+    position: absolute;
+    height: 100%;
+    width: 20px;
+    right: 0;
+    top: 0;
+    border-left: 2px solid $grey-line;
+    opacity: 0;
+    transition: .2s;
+    &:hover {
+      .inputNumberArrow {
+        height: 40%;
+      }
+    }
+  }
+  &Arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    transition: .2s;
+    cursor: pointer;
+    &:hover {
+      background: rgba($grey-light-bg, .3);
+    }
+    &:nth-child(1) {
+      border-top-right-radius: 5px;
+      &:hover {
+        height: 60%;
+      }
+    }
+    &:nth-child(2) {
+      border-bottom-right-radius: 5px;
+      &:hover {
+        height: 60%;
+      }
+    }
+    i {
+      font-size: 14px;
+      color: $grey;
+    }
+  }
+}

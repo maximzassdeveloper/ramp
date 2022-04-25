@@ -1,0 +1,3 @@
+{
+  "/films/:slug": "/films?slug=:slug"
+}

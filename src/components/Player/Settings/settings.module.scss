@@ -1,0 +1,92 @@
+.settings {
+  transition: .2s;
+  height: auto;
+}
+
+.alertSettings {
+  padding: 12px 14px;
+}
+
+.subSettings {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  width: 100%;
+  padding: 0 14px;
+  z-index: 10;
+  background: $dark-bg;
+  transform: translateX(100%);
+  transition: .2s;
+  &Header{
+    padding-bottom: 18px;
+    &:hover {
+      span, i {
+        opacity: .8;
+      }
+    }
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    i {
+      font-size: 20px !important;
+      margin-right: 10px;
+      transition: .2s;
+    }
+    span {
+      font-size: 20px;
+      transition: .2s;
+    }
+  }
+  &Active {
+    transform: translateX(0);
+  }
+}
+
+.settingsItem, .subSettingsItem {
+  min-width: 320px;
+  padding: 8px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .2s;
+  margin-bottom: 12px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:hover {
+    background: $grey-bg;
+  }
+  h4, span {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1em;
+    color: #fff;
+  }
+  span {
+    color: $grey;
+  }
+}
+
+
+.settingsItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subSettingsItem {
+  padding-left: 32px;
+  &.active {
+    position: relative;
+    display: flex;
+    align-items: center;
+    span {
+      color: #fff;
+    }
+    i {
+      position: absolute;
+      left: 4px;
+      color: $accent;
+      font-size: 20px;
+    }
+  }
+}

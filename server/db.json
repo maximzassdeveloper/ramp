@@ -1,0 +1,347 @@
+{
+  "films": [
+    {
+      "id": 1,
+      "slug": "the-queen-s-gambit",
+      "name": "The Queen's Gambit",
+      "rating": {
+        "count": 8.7,
+        "views": 1400
+      },
+      "type": "series",
+      "preview": "https://www.kino-teatr.ru/art/5786/82075.jpg",
+      "year": 2020,
+      "categories": [
+        "historical",
+        "drama"
+      ],
+      "ageLimit": "18+",
+      "shortDesc": "Set during the Cold War era, orphaned chess prodigy Beth Harmon struggles with addiction in a quest to become the greatest chess player in the world.",
+      "desc": "The Queen's Gambit follows the life of an orphan chess prodigy, Elizabeth Harmon, during her quest to become an elite chess player while struggling with emotional problems, drugs and alcohol dependency. The title of the series refers to a chess opening of the same name. The story begins in the mid-1950s and proceeds into the 1960s.",
+      "details": {
+        "createdBy": [
+          "Scott Frank",
+          "Allan Scott"
+        ],
+        "musicBy": [
+          "Carlos Rafael Rivera"
+        ],
+        "starring": [
+          "Anya Taylor-Joy",
+          "Bill Camp",
+          "Moses Ingram",
+          "Isla Johnston",
+          "Christiane Seidel",
+          "Rebecca Root"
+        ],
+        "awards": [
+          "Winner of 11 Emmys, including Best",
+          "Miniseries, and a Golden Globe for Best",
+          "Miniseries and Best Actress"
+        ]
+      },
+      "trailers": [
+        {
+          "id": 1,
+          "name": "Trailer 1",
+          "timing": "2.6 min",
+          "preview": "https://vhd.zetflix.online/uploads/posts/2020-10/1603442946_s1_ep6-the-queens-gambit-adjournment_moment.jpg",
+          "video": [{
+            "url": "http://localhost:4300/assets/queen-gambit.mp4",
+            "type": "video/mp4",
+            "size": "720"
+          }],
+          "filmId": 1
+        },
+        {
+          "id": 2,
+          "name": "Trailer 2",
+          "timing": "3.1 min",
+          "preview": "https://vhd.zetflix.online/uploads/posts/2020-10/1603440662_s1_ep3-the-queens-gambit-doubled-pawns_moment.jpg",
+          "video": [{
+            "url": "http://localhost:4300/assets/queen-gambit.mp4",
+            "type": "video/mp4",
+            "size": "720"
+          }],
+          "filmId": 1
+        }
+      ],
+      "seasons": [
+        {
+          "id": 1,
+          "name": "Season 1",
+          "episodes": [
+            {
+              "id": 3,
+              "name": "Openings",
+              "timing": "61 min",
+              "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABdGMnrCCAllmg2PSnKj6DnL_CAhz2i7KShxGvshWD41BszKbuwRezmhCNgv0PmQPzz-7haF05mrKUZpVeJTXvI_lHF64g9jzbBaPytlKvUZRFmFv.jpg?r=4e3",
+              "video": [{
+                "url": "http://localhost:4300/assets/queen-gambit.mp4",
+                "type": "video/mp4",
+                "size": "720"
+              }],
+              "seasonId": 1
+            },
+            {
+              "id": 4,
+              "name": "Exchanges",
+              "timing": "65 min",
+              "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaciRaaAtEogMeyOkQBoOpNz79yHAn6eyQhw1O-RVnyj6cDpudkTnpJmtubeUZ3U-aZzP9xDZ-QQVvcppO3kTuaWg1z8QBWvmLFQRL-zVuJAKymr.jpg?r=0e3",
+              "video": [{
+                "url": "http://localhost:4300/assets/ ",
+                "type": "video/ogg",
+                "size": "720"
+              }],
+              "seasonId": 1
+            },
+            {
+              "id": 5,
+              "name": "Doubled Pawns",
+              "timing": "58 min",
+              "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQVbsz79M2Z9CWcQSJHCsm-giqZHvLoOaxsDsKbg-iULqa3iygNtBSsuDYk-9b03WPSUNgU6jbJka3j2w4T0IxRcAdl3WNrXvThL10husx9KJMyH.jpg?r=1bc",
+              "video": [{
+                "url": "https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4",
+                "type": "video/mp4",
+                "size": "1080"
+              }, {
+                "url": "https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4",
+                "type": "video/mp4",
+                "size": "720"
+              }],
+              "seasonId": 1
+            },
+            {
+              "id": 6,
+              "name": "Middle Game",
+              "timing": "61 min",
+              "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABeHUH8Y__Yg-vwwoYlc1o4PscsFCMHliKK5INHnPAlhSA-IMfSwt0L3GzAI6hG9mCgy8qwnrn2gC1EJwGiUyqVObs4p1tSjFUBXnLZhF-G_OuU4j.jpg?r=83b",
+              "video": [{
+                "url": "https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4",
+                "type": "video/mp4",
+                "size": "720"
+              }],
+              "seasonId": 1
+            },
+            {
+              "id": 7,
+              "name": "Fork",
+              "timing": "60 min",
+              "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWPkFJCl4YMxSUiDe9V4LnRS9aWiz43bv34MI3E_d_7y-kUg0plAjZVUbbyBYEkllt8vBLQaC13bOZeB4_IR4QEioSejqFAQuHNtIhK2a6Ki9603.jpg?r=f5c",
+              "video": [{
+                "url": "http://localhost:4300/assets/queen-gambit.mp4",
+                "type": "video/mp4",
+                "size": "720"
+              }],
+              "seasonId": 1
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Season 2",
+          "episodes": [
+            {
+              "id": 8,
+              "name": "Doubled Pawns",
+              "timing": "58 min",
+              "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQVbsz79M2Z9CWcQSJHCsm-giqZHvLoOaxsDsKbg-iULqa3iygNtBSsuDYk-9b03WPSUNgU6jbJka3j2w4T0IxRcAdl3WNrXvThL10husx9KJMyH.jpg?r=1bc",
+              "video": [{
+                "url": "http://localhost:4300/assets/queen-gambit.mp4",
+                "type": "video/mp4",
+                "size": "720"
+              }],
+              "seasonId": 2
+            },
+            {
+              "id": 9,
+              "name": "Middle Game",
+              "timing": "61 min",
+              "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABeHUH8Y__Yg-vwwoYlc1o4PscsFCMHliKK5INHnPAlhSA-IMfSwt0L3GzAI6hG9mCgy8qwnrn2gC1EJwGiUyqVObs4p1tSjFUBXnLZhF-G_OuU4j.jpg?r=83b",
+              "video": [{
+                "url": "http://localhost:4300/assets/queen-gambit.mp4",
+                "type": "video/mp4",
+                "size": "720"
+              }],
+              "seasonId": 2
+            },
+            {
+              "id": 10,
+              "name": "Fork",
+              "timing": "60 min",
+              "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWPkFJCl4YMxSUiDe9V4LnRS9aWiz43bv34MI3E_d_7y-kUg0plAjZVUbbyBYEkllt8vBLQaC13bOZeB4_IR4QEioSejqFAQuHNtIhK2a6Ki9603.jpg?r=f5c",
+              "video": [{
+                "url": "http://localhost:4300/assets/queen-gambit.mp4",
+                "type": "video/mp4",
+                "size": "720"
+              }],
+              "seasonId": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "big-buck-bunny",
+      "name": "Big Buck Bunny",
+      "type": "movie",
+      "preview": "http://localhost:4300/assets/big-buck-bunny.png",
+      "year": 2011,
+      "rating": {
+        "count": 8.1,
+        "views": 834
+      },
+      "ageLimit": "6+",
+      "categories": [
+        "cartoon"
+      ],
+      "shortDesc": "is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender.",
+      "episode": {
+        "id": 11,
+        "name": "Big Buck Bunny",
+        "timing": "10min",
+        "video": [{
+          "url": "http://localhost:4300/assets/ ",
+          "type": "video/ogg",
+          "size": "720"
+        }],
+        "preview": "http://localhost:4300/assets/big-buck-bunny.png",
+        "filmId": 2
+      }
+    },
+    {
+      "id": 3,
+      "slug": "Money Heist",
+      "name": "money-heist",
+      "type": "series",
+      "preview": "http://localhost:4300/assets/1.jpg",
+      "rating": {
+        "count": 6.1,
+        "views": 2500
+      },
+      "year": 2017,
+      "ageLimit": "18+",
+      "desc": "is a Spanish heist crime drama television series created by Álex Pina. The series traces two long-prepared heists led by the Professor (Álvaro Morte), one on the Royal Mint of Spain, and one on the Bank of Spain, told from the perspective of one of the robbers, Tokyo (Úrsula Corberó). The narrative is told in a real-time-like fashion and relies on flashbacks, time-jumps, hidden character motivations, and an unreliable narrator for complexity.",
+      "categories": [
+        "thriller"
+      ],
+      "seasons": [
+        {
+          "id": 3,
+          "name": "Part 1",
+          "episodes": [
+            {
+              "id": 12,
+              "name": "Bella ciao",
+              "timing": "52min",
+              "video": [{
+                "url": "http://localhost:4300/assets/queen-gambit.mp4",
+                "type": "video/mp4",
+                "size": "720"
+              }],
+              "preview": "http://localhost:4300/assets/1.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Sherlock Holms",
+      "slug": "sherlock",
+      "type": "series",
+      "preview": "http://localhost:4300/assets/sherlock.jpg",
+      "rating": {
+        "count": 5.1,
+        "views": 3200
+      },
+      "year": 2016,
+      "ageLimit": "16+",
+      "categories": [
+        "crime"
+      ],
+      "seasons": [
+        {
+          "id": 1,
+          "name": "Season 1",
+          "episodes": [
+            {
+              "id": 13,
+              "name": "The Final Problem",
+              "timing": "72min",
+              "video": [{
+                "url": "http://localhost:4300/assets/queen-gambit.mp4",
+                "type": "video/mp4",
+                "size": "720"
+              }],
+              "preview": "http://localhost:4300/assets/sherlock.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "the-avengers",
+      "name": "The Avengers",
+      "type": "movie",
+      "preview": "http://localhost:4300/assets/avengers.jpg",
+      "rating": {
+        "count": 2.0,
+        "views": 1340
+      },
+      "year": 2012,
+      "ageLimit": "12+",
+      "episode": {
+        "id": 14,
+        "name": "The avengers",
+        "timing": "2h 12min",
+        "video": [{
+          "url": "http://localhost:4300/assets/ ",
+          "type": "video/ogg",
+          "size": "720"
+        }],
+        "preview": "http://localhost:4300/assets/avengers.jpg"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Historical",
+      "slug": "historical"
+    },
+    {
+      "id": 2,
+      "name": "Drama",
+      "slug": "drama",
+      "filmId": 2
+    },
+    {
+      "id": 3,
+      "name": "Action",
+      "slug": "action"
+    },
+    {
+      "id": 4,
+      "name": "Fantasy",
+      "slug": "fantasy"
+    },
+    {
+      "id": 5,
+      "name": "Cartoon",
+      "slug": "cartoon"
+    },
+    {
+      "id": 6,
+      "name": "Thriller",
+      "slug": "thriller"
+    },
+    {
+      "id": 7,
+      "name": "Crime",
+      "slug": "crime"
+    }
+  ]
+}
