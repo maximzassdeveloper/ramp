@@ -1,3 +1,62 @@
 .button {
-  
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 16px;
+  width: max-content;
+  max-width: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  background: $grey-items;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(#000, .2);
+  transition: .2s;
+  i {
+    line-height: 0em;
+  }
+  &:hover {
+    background: #585858;
+  }
+}
+
+.default {
+  background: $grey-items;
+}
+
+.primary {
+  background: $accent;
+  &:hover {
+    background: #D83F3F;
+  }
+}
+
+.small {
+  font-size: 14px;
+  padding: 8px 10px;
+}
+
+.middle {
+  font-size: 18px;
+  padding: 9px 20px;
+}
+
+.large {
+  font-size: 22px;
+  padding: 10px 22px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-left: -3px;
+}
+
+.onlyIcon {
+  padding: 10px;
+  line-height: 0em;
+  .icon {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }

@@ -1,3 +1,4 @@
-export { SingleFilmInfo } from './SingleFilmInfo'
-export { SingleFilmNav } from './SingleFilmNav'
-export { SingleFilmDetails } from './SingleFilmDetails'
+export { Overview } from './Overview'
+export { Navigation } from './Navigation'
+export { Details } from './Details'
+export { SelectRating } from './SelectRating/SelectRating'

@@ -1,0 +1,75 @@
+$rate: #ffc337;
+$default: #494949;
+
+.stars {
+  width: max-content;
+  &.showIndex {
+    .star {
+     margin-bottom: 30px;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  position: relative;
+  display: block;
+  font-size: 24px;
+  line-height: 0em;
+  padding: 2px;
+  cursor: pointer;
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  i {
+    color: $default;
+    transition: .2s;
+  }
+  &Active {
+    .starIndex {
+      color: #fff;
+    }
+    i {
+      color: $rate;
+    }
+  } 
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.starIndex {
+  position: absolute;
+  left: 50%;
+  font-size: 18px;
+  color: $default;
+  z-index: 1;
+  font-weight: 600;
+  margin-top: 10px;
+  top: 100%;
+  transform: translateX(-50%);
+  transition: .2s;
+}
+
+.label {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.default {
+  i {
+    font-size: 24px;
+  }
+}
+
+.large {
+  .star {
+    padding: 4px;
+  }
+  i {
+    font-size: 40px;
+  }
+}

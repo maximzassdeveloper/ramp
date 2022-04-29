@@ -1,9 +1,10 @@
 import { FC, useState } from 'react'
 import { IFilm, ISeason } from '@/types/film'
 import { useActions } from '@/hooks/useActions'
+import classNames from 'classnames'
 
 import '@splidejs/splide/dist/css/splide.min.css'
-import styles from './seasons.module.scss'
+import s from './seasons.module.scss'
 
 import { SeasonsMenu } from './SeasonsMenu'
 import { SeasonsList } from './SeasonsList'
@@ -14,9 +15,10 @@ interface SeasonProps {
   seasons: ISeason[]
   film: IFilm
   direction?: Direction
+  classes?: any
 }
 
-export const Seasons: FC<SeasonProps> = ({ seasons, film, direction = 'horizontal' }) => {
+export const Seasons: FC<SeasonProps> = ({ seasons, film, direction = 'horizontal', classes }) => {
 
   const { openPlayer } = useActions()
   const [activeSeason, setActiveSeason] = useState(seasons[0])
@@ -33,13 +35,19 @@ export const Seasons: FC<SeasonProps> = ({ seasons, film, direction = 'horizonta
     })
   }
 
-  const cls = [styles.seasons]
-  if (direction === 'vertical') cls.push(styles.seasonsVertical)
+  const cls = classNames(
+    s.seasons,
+    classes?.seasons,
+    { [s.vertical]: direction === 'vertical' }
+  )
 
   return (
-    <div className={cls.join(' ')}>
+    <div className={cls}>
 
-      {direction === 'horizontal' && <div onClick={onPlayClick} className={styles.play}>
+      {direction === 'horizontal' && <div 
+        onClick={onPlayClick} 
+        className={classNames(s.play, classes?.play)}
+      >
         <i className="ph-play-fill"></i>
       </div>}
 

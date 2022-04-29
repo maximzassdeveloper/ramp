@@ -1,52 +1,64 @@
-import { FC, useEffect, useState } from 'react'
-import { CSSTransition } from 'react-transition-group'
-import { Seasons } from '..'
-import { SingleFilmInfo, SingleFilmNav, SingleFilmDetails } from '.'
-import { IFilm } from '../../types/film'
-import {classnames} from '../../utils/classnames'
-import './single-film.scss'
+import { FC, useState } from 'react'
+import { Seasons } from '@/components'
+import { Overview, Navigation, Details, SelectRating } from '.'
+import { IFilm } from '@/types/film'
+import classNames from 'classnames'
+import s from './single-film.module.scss'
 
 interface SignleFilmProps {
   film: IFilm
 }
 
+export type SingleFilmTab = 'Overview' | 'Episodes' | 'Details'
+
 export const SingleFilm: FC<SignleFilmProps> = ({ film }) => {
 
-  const [activeTab, setActiveTab] = useState(0)
-
-  useEffect(() => {
-    document.body.style.background = `url(${film.preview})`
-  }, [film])
+  const [activeTab, setActiveTab] = useState<SingleFilmTab>('Overview')
+  const [isShowRating, setIsShowRating] = useState(false)
  
-  const classes = classnames(
-    'single-film',
-    { 'single-film--overview': activeTab === 0 },
-    { 'single-film--episodes': activeTab === 1 },
-    { 'single-film--details': activeTab === 2 },
-  )
+  const classes = classNames(s.film, {
+    [s.filmEpisodes]: activeTab === 'Episodes',
+    [s.filmDetails]: activeTab === 'Details' 
+  })
 
   return (
     <div className={classes} style={{background: `url(${film.preview})`}}>
 
-      <div className="single-film-title__wrapper">
-        <h1 className="single-film-title">{film.name}</h1>
+      <div className={s.titleWrapper}>
+        <h1 className={s.title}>{film.name}</h1>
       </div>
 
+      <div className={s.filmFadingBlock}>
+        <Overview 
+          film={film} 
+          isShow={activeTab === 'Overview'}
+          onOpenRating={() => setIsShowRating(true)}
+        />  
 
-      <div className="single-film-faded">
-        <CSSTransition in={activeTab === 0} timeout={200} classNames="fadeDown" mountOnEnter unmountOnExit>
-          <SingleFilmInfo film={film} />  
-        </CSSTransition>
-
-        <CSSTransition in={activeTab === 2} timeout={200} classNames="fadeDown" mountOnEnter unmountOnExit>
-          <SingleFilmDetails film={film} />
-        </CSSTransition>
+        <Details 
+          film={film} 
+          isShow={activeTab === 'Details'}
+        />
       </div>
 
-      <SingleFilmNav activeTab={activeTab} onChange={setActiveTab} />
+      <Navigation 
+        activeTab={activeTab} 
+        filmType={film.type}
+        onChange={setActiveTab} 
+      />
+
+      <SelectRating 
+        isShow={isShowRating} 
+        film={film}
+        onClose={() => setIsShowRating(false)} 
+      />
       
-      {film.seasons && <div className="single-film__seasons">
-        <Seasons film={film} seasons={film.seasons} />
+      {film.seasons && <div className={s.seasonsWrapper}>
+        <Seasons 
+          film={film} 
+          seasons={film.seasons} 
+          classes={s}
+        />
       </div>}
 
     </div>

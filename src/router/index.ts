@@ -9,12 +9,12 @@ export interface IRoute {
 
 export enum RouteNames {
   HOME = '/',
-  BOOKMARKS = '/bookmarks',
+  FAVOURITES = '/favourites',
   FILM = '/film'
 }
 
 export const routes: IRoute[] = [
   { path: RouteNames.HOME, component: pages.Home, exact: true },
-  { path: RouteNames.BOOKMARKS, component: pages.Bookmarks },
+  { path: RouteNames.FAVOURITES, component: pages.Favourites },
   { path: `${RouteNames.FILM}/:slug`, component: pages.SingleFilmPage }
 ]

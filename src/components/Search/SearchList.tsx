@@ -32,7 +32,7 @@ export const SearchList: FC = () => {
       style={{ maxHeight: height }}
     >
       {isLoading 
-        ? <Loader loading={isLoading} />
+        ? <Loader isLoading={isLoading} />
         : <>
           {error && <span className={s.notfound}>{error}</span>}
           {!error && !films.length && <span className={s.notfound}>No results</span>}

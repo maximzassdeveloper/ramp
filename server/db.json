@@ -89,7 +89,7 @@
               "timing": "65 min",
               "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaciRaaAtEogMeyOkQBoOpNz79yHAn6eyQhw1O-RVnyj6cDpudkTnpJmtubeUZ3U-aZzP9xDZ-QQVvcppO3kTuaWg1z8QBWvmLFQRL-zVuJAKymr.jpg?r=0e3",
               "video": [{
-                "url": "http://localhost:4300/assets/ ",
+                "url": "http://localhost:4300/assets/movie.ogv",
                 "type": "video/ogg",
                 "size": "720"
               }],
@@ -196,13 +196,35 @@
       "categories": [
         "cartoon"
       ],
+      "trailers": [{
+        "id": 11,
+        "name": "Trailer for Big Buck Bunny",
+        "timing": "2min",
+        "video": [{
+          "url": "http://localhost:4300/assets/movie.ogv",
+          "type": "video/ogg",
+          "size": "720"
+        }],
+        "preview": "http://localhost:4300/assets/big-buck-bunny.png",
+        "filmId": 2
+      }],
+      "details": {
+        "createdBy": [
+          "Sacha Goedegebure",
+          "Ton Roosendaal"
+        ],
+        "musicBy": [
+          "Jan Morgenstern"
+        ]
+      },
       "shortDesc": "is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender.",
+      "desc": "is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation.[5][6] Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.",
       "episode": {
         "id": 11,
         "name": "Big Buck Bunny",
         "timing": "10min",
         "video": [{
-          "url": "http://localhost:4300/assets/ ",
+          "url": "http://localhost:4300/assets/movie.ogv",
           "type": "video/ogg",
           "size": "720"
         }],

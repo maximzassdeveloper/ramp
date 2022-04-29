@@ -19,7 +19,7 @@
   }
 }
 
-.seasonsVertical {
+.vertical {
   padding: 0;
   &:before {
     content: none;
@@ -87,7 +87,6 @@
     &Prev {
       left: 0;
       background: linear-gradient(90deg, rgba($dark-bg, .8) 20%, transparent);
-      border-radius: 15px 0 0 15px;
     }
     &Next {
       right: 0;

@@ -71,7 +71,7 @@ export const Player: FC<VideoProps> = ({ sources }) => {
     }
   }, [sources])
 
-  // key events
+  // key event
   useEffect(() => {
     document.addEventListener('keydown', onKeyDown)
     return () => {
@@ -101,7 +101,7 @@ export const Player: FC<VideoProps> = ({ sources }) => {
         </video>
 
         <PlayButton center />
-        <Loader loading={isLoading} className={styles.playerLoader} />
+        <Loader isLoading={isLoading} className={styles.playerLoader} />
         
         <PlayerHeader />
         <Controls />

@@ -2,7 +2,7 @@ export interface IFilmBase {
   id: number
   slug: string
   name: string
-  type: filmType
+  type: FilmType
   preview: string
   rating: IRating
 
@@ -10,13 +10,13 @@ export interface IFilmBase {
   shortDesc?: string
   year?: number
   ageLimit?: string
-  
+
   trailers?: IEpisode[]
   categories?: number[]
   details?: IDetails
 }
 
-export type filmType = 'series' | 'movie'
+export type FilmType = 'series' | 'movie'
 
 export interface ISeries extends IFilmBase {
   seasons: ISeason[]
@@ -26,7 +26,7 @@ export interface IMovie extends IFilmBase {
   episode: IEpisode
 }
 
-export interface IFilm extends ISeries, IMovie {}
+export interface IFilm extends ISeries, IMovie { }
 
 export interface ISeason {
   id: number

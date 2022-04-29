@@ -1,11 +1,29 @@
-import { FC, useEffect } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { useActions, useTypedSelector } from '@/hooks'
 import styles from './home.module.scss'
+import { FilmList } from '@/components'
+import { RatingStars, Title } from '@/components/generetic'
+
+const label: any = {
+  1: 'Terrible',
+  2: 'Bad',
+  3: 'Bad',
+  4: 'Bad',
+  5: 'Normal',
+  6: 'Normal',
+  7: 'Good',
+  8: 'Good',
+  9: 'Wonderful',
+  10: 'Excellent',
+}
 
 export const Home: FC = () => {
 
-  const { films, isLoading } = useTypedSelector(s => s.film)
+  const { films, isLoading, error } = useTypedSelector(s => s.film)
   const { fetchFilms } = useActions()
+
+  const [value, setValue] = useState(0)
+  const [labelText, setLabelText] = useState('')
 
   useEffect(() => {
     fetchFilms()
@@ -13,11 +31,22 @@ export const Home: FC = () => {
 
   return (
     <div className={styles.home}>
-      <h1>Home</h1>
-      <div style={{maxWidth: '50%'}}>
-        {isLoading && <span>Загрузка</span>}
-        {films.map(film => <span key={film.id}>{film.id}</span>)}
-      </div>
+      <Title level='h1'>Films</Title>
+      <FilmList 
+        films={films} 
+        isLoading={isLoading} 
+        error={error} 
+      />
+
+      <RatingStars 
+        value={value}
+        count={10}
+        size='large'
+        showIndex
+        onChange={v => {
+          setValue(v)
+        }}
+      />
     </div>
   )
 }

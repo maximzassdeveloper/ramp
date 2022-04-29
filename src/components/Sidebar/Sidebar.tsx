@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { RouteNames } from '@/router'
 import { useActions, useTypedSelector } from '@/hooks'
 import { Search } from '@/components'
@@ -35,8 +35,8 @@ export const Sidebar: FC = () => {
             <i className="ph-magnifying-glass" />
           </li>
 
-          <li title='Bookmarks'>
-            <Link to={RouteNames.BOOKMARKS}>
+          <li title='Favourites'>
+            <Link to={RouteNames.FAVOURITES}>
               <i className="ph-bookmark-simple" />
             </Link>
           </li>

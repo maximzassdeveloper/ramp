@@ -1,0 +1,18 @@
+.closeIcon {
+  font-size: 24px;
+  line-height: 0em;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .2s;
+  &:hover {
+    background: #333;
+  }
+  i {
+    transition: .2s;
+  }
+}

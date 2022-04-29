@@ -8,6 +8,8 @@ export const PlayerSeasons: FC = () => {
   const { film } = useTypedSelector(s => s.player)
   const { isOpen, setIsOpen, ref, sourceRef } = useClickOut()
 
+  if (film?.type === 'movie') return null
+
   return (
     <div>
       <PlayerAlert elRef={ref} isOpen={isOpen}>

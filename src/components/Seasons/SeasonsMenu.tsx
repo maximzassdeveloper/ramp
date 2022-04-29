@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { ISeason } from '@/types/film'
-import styles from './seasons.module.scss'
+import classNames from 'classnames'
+import s from './seasons.module.scss'
 
 interface SeasonsMenuProps {
   seasons: ISeason[]
@@ -11,27 +12,26 @@ interface SeasonsMenuProps {
 export const SeasonsMenu: FC<SeasonsMenuProps> = ({ seasons, activeSeason, onSelect }) => {
 
   const renderList = () => {
-    return seasons.map((season, index) => {
-
-      const cls = [styles.menuItem]
-      if (season.id === activeSeason.id) cls.push(styles.menuItemSelected)
-
-      return <div 
+    return seasons.map((season, index) => (
+      <div 
         key={season.id}
         onClick={() => onSelect(season.id)} 
-        className={cls.join(' ')}
+        className={classNames(
+          s.menuItem, 
+          { [s.menuItemSelected]: season.id === activeSeason.id }
+        )}
       >
         {index+1}
       </div>
-    })
+    ))
   }
 
   return (
-    <div className={styles.menu}>
-      <h2 className={styles.title}>{activeSeason.name}</h2>
+    <div className={s.menu}>
+      <h2 className={s.title}>{activeSeason.name}</h2>
 
       {seasons.length > 1 && 
-        <div className={styles.menuList}>
+        <div className={s.menuList}>
           {renderList()}
         </div>}
     </div>
