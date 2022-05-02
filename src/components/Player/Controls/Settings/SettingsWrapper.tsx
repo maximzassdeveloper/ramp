@@ -1,17 +1,20 @@
 import { FC, useState, useEffect, useRef } from 'react'
 import { SettingsItem } from './SettingsItem'
 import { SubSettings } from './SubSettings'
-import { ISetting } from './PlayerSettings'
+import { IOption, IOptions, ISetting } from './PlayerSettings'
 import s from './settings.module.scss'
 
 interface SettingsWrapeprProps {
   isOpen: boolean
   settings: ISetting[]
+  options: IOptions
 }
 
-export const SettingsWrapepr: FC<SettingsWrapeprProps> = ({ isOpen, settings }) => {
+export interface ICurSetting extends ISetting, IOption {}
 
-  const [curSetting, setCurSetting] = useState<ISetting | null>(null)
+export const SettingsWrapepr: FC<SettingsWrapeprProps> = ({ isOpen, settings, options }) => {
+
+  const [curSetting, setCurSetting] = useState<ICurSetting | null>(null)
   const [height, setHeight] = useState(0)
   const startHeight = useRef(0)
 
@@ -20,7 +23,7 @@ export const SettingsWrapepr: FC<SettingsWrapeprProps> = ({ isOpen, settings }) 
 
   const clickHandler = (name: string) => {
     const set = settings.find(x => x.name === name)
-    if (set) setCurSetting(set)
+    if (set) setCurSetting(Object.assign(set, options[set.name]))
   }
 
   // Transition change height of container
@@ -46,6 +49,7 @@ export const SettingsWrapepr: FC<SettingsWrapeprProps> = ({ isOpen, settings }) 
     if (!isOpen) {
       setCurSetting(null)
     }
+    // Init height of container
     if (isOpen && startHeight.current === 0 && settingsRef.current) {
       const h = settingsRef.current.offsetHeight
       setHeight(h)
@@ -60,18 +64,18 @@ export const SettingsWrapepr: FC<SettingsWrapeprProps> = ({ isOpen, settings }) 
       style={{ height: !!height ? height+'px' : 'auto' }}
     >
 
-      {settings.map(el => 
+      {settings.map(setting => 
         <SettingsItem 
-          key={el.name}
-          name={el.name}
-          value={el.value}
+          key={setting.name}
+          name={setting.name}
+          value={setting.value}
           onClick={clickHandler}
         />
       )}
 
       <SubSettings 
+        ref={subSettingsRef} 
         setting={curSetting} 
-        elRef={subSettingsRef} 
         onClick={() => setCurSetting(null)}
       />
 

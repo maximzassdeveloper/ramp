@@ -1,32 +1,19 @@
-import { RefObject, useRef } from 'react'
+import { MutableRefObject, RefObject, useRef } from 'react'
 
-export const useDrag = (sliderRef: RefObject<HTMLDivElement>, step: number, onUpdate: () => void) => {
-  const percents = useRef(0)
+export const useDrag = (sliderRef: RefObject<HTMLDivElement>, onUpdate: () => void) => {
+  const offset = useRef(0)
 
   const onStartMove = (e: React.MouseEvent) => {
     if (!sliderRef.current) return
     e.stopPropagation()
 
     const { width, x: startX } = sliderRef.current.getBoundingClientRect()
+    calcOffset(e, offset, width, startX, onUpdate)
 
     const onMouseMove = (ev: MouseEvent) => {
       ev.preventDefault()
 
-      const { pageX: moveX } = ev
-      const offsetX = moveX - startX
-      
-      let perc = offsetX / width
-      // perc = +(perc * 100).toFixed(1)
-      perc = Math.floor(perc * 100)
-
-      // if (step) perc = calcStepRound(perc, step)
-      if (perc > 100) perc = 100
-      if (perc < 0) perc = 0
-
-      if (percents.current !== perc) {
-        percents.current = perc
-        onUpdate()
-      }
+      calcOffset(ev, offset, width, startX, onUpdate)
     }
 
     const onMouseUp = () => {
@@ -40,19 +27,40 @@ export const useDrag = (sliderRef: RefObject<HTMLDivElement>, step: number, onUp
 
   return {
     onStartMove,
-    percents
+    offset,
   }
 }
 
-function calcStepRound (val: number, st: number): number {
-  let newVal = val
+function calcOffset(
+  e: MouseEvent | React.MouseEvent,
+  offsetRef: MutableRefObject<number>,
+  width: number,
+  startX: number,
+  onUpdate: () => void
+) {
+  const { pageX: moveX } = e
+  const offsetX = moveX - startX
 
-  const remain = st - (val % st)
-  if (remain <= st / 2) {
-    newVal += remain
-  } else {
-    newVal -= val % st
+  let perc = offsetX / width
+  perc = Math.floor(perc * 100)
+
+  if (perc > 100) perc = 100
+  if (perc < 0) perc = 0
+
+  if (offsetRef.current !== perc) {
+    offsetRef.current = perc
+    onUpdate()
   }
+  // if (!sliderRef.current) return
 
-  return newVal
+  // const { pageX: moveX } = e
+  // let offsetX = moveX - startX
+
+  // if (offsetX > width) offsetX = width
+  // else if (offsetX < 0) offsetX = 0
+
+  // if (offsetRef.current !== offsetX) {
+  //   offsetRef.current = Math.floor(offsetX)
+  //   onUpdate()
+  // }
 }

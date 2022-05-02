@@ -1,0 +1,37 @@
+.volume {
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  width: 100px;
+  margin-left: 20px;
+  margin-top: -1px;
+  margin-bottom: 0;
+  height: 4px;
+  padding: 14px 0;
+  &:hover {
+    .handle span {
+      opacity: 1;
+    }
+  }
+}
+
+.rail {
+  background: rgba(#fff, .3);
+  border-radius: 3px;
+}
+
+.track {
+  background: #fff;
+  border-radius: 3px;
+}
+
+.handle {
+  height: 12px;
+  width: 12px;
+  background: #fff;
+  span {
+    opacity: 0;
+  }
+}

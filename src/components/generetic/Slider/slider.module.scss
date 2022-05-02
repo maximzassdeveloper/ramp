@@ -1,6 +1,7 @@
 .slider {
   position: relative;
   width: calc(100% - 16px);
+  min-width: 140px;
   height: 24px;
   margin: 0 auto 5px;
   padding: 35px 0 8px;

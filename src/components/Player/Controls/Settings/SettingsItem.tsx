@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import classNames from 'classnames'
 import s from './settings.module.scss'
 
 interface SettingsItemProps {
@@ -20,7 +21,7 @@ export const SettingsItem: FC<SettingsItemProps> = ({ value, name, onClick }) =>
 interface SubSettingsItemProps {
   value: string
   active: boolean
-  onClick?: (value: string) => void
+  onClick: (value: string) => void
 }
 
 export const SubSettingsItem: FC<SubSettingsItemProps> = ({ 
@@ -28,10 +29,10 @@ export const SubSettingsItem: FC<SubSettingsItemProps> = ({
 }) => {
   return (
     <div 
-      className={`${s.subSettingsItem} ${active ? s.active : ''}`} 
-      onClick={() => onClick ? onClick(value) : null}
+      className={classNames(s.subSettingsItem, { [s.active]: active })} 
+      onClick={() => onClick(value)}
     >
-      {active ? <i className="ph-check"></i> : ''}
+      {active ? <i className='ph-check' /> : ''}
       <span>{value}</span>
     </div>
   )

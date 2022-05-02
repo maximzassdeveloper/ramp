@@ -1,29 +1,35 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { Seasons } from '@/components/Seasons/Seasons'
 import { useTypedSelector, useClickOut } from '@/hooks'
 import { PlayerAlert } from '../common/PlayerAlert'
 
 export const PlayerSeasons: FC = () => {
 
-  const { film } = useTypedSelector(s => s.player)
-  const { isOpen, setIsOpen, ref, sourceRef } = useClickOut()
+  const [isOpen, setIsOpen] = useState(false)
+  const { film, episode } = useTypedSelector(s => s.player)
+  const { ref } = useClickOut(onClickOut)
 
-  if (film?.type === 'movie') return null
+  function onClickOut () {
+    setIsOpen(false)
+  }
+
+  if (!film || film?.type === 'movie') return null
 
   return (
-    <div>
-      <PlayerAlert elRef={ref} isOpen={isOpen}>
+    <div ref={ref}>
+      <PlayerAlert isOpen={isOpen}>
         <div>
-          {film && <Seasons 
+          <Seasons 
             film={film}
             seasons={film.seasons}
+            activeEpisode={episode}
             direction='vertical'
-          />}
+          />
         </div>
       </PlayerAlert>
 
-      <div ref={sourceRef} onClick={() => setIsOpen(!isOpen)}>
-        <i className="ph-browsers-fill"></i>
+      <div onClick={() => setIsOpen(!isOpen)}>
+        <i className='ph-browsers-fill' />
       </div>
     </div>
   )

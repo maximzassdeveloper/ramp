@@ -1,19 +1,23 @@
 import { FC } from 'react'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
-import { IFilm, ISeason } from '@/types/film'
-import { Episode } from '../Episode/Episode'
+import { IEpisode, IFilm, ISeason } from '@/types/film'
+import { Episode } from '@/components'
 import { Direction } from './Seasons'
+import cn from 'classnames'
 
 import '@splidejs/splide/dist/css/splide.min.css'
-import s from './seasons.module.scss'
 
 interface SeasonsListProps {    
   season: ISeason
   film: IFilm
   direction?: Direction
+  activeEpisode?: IEpisode | null
+  styles: any
 }
 
-export const SeasonsList: FC<SeasonsListProps> = ({ season, film, direction }) => {  
+export const SeasonsList: FC<SeasonsListProps> = ({ 
+  season, film, direction, activeEpisode, styles: s 
+}) => {  
   return (
     <div className={s.list}>
       {direction === 'horizontal'
@@ -40,7 +44,10 @@ export const SeasonsList: FC<SeasonsListProps> = ({ season, film, direction }) =
       : season.episodes.map((episode, i) => 
           <Episode 
             key={episode.id}
-            className={s.episodeVertical}
+            className={cn({
+              [s.episodeActive]: episode.id === activeEpisode?.id
+            })}
+            classes={s}
             film={film} 
             episode={episode} 
             count={i+1} 

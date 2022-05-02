@@ -1,19 +1,17 @@
-import { FC, memo, RefObject } from 'react'
+import { forwardRef, memo, ReactNode } from 'react'
 import { CSSTransition } from 'react-transition-group'
+import classNames from 'classnames'
 import s from './common.module.scss'
 
 interface PlayerAlertProps {
   isOpen: boolean
-  elRef?: RefObject<any>
   className?: string
+  children?: ReactNode
 }
 
-export const PlayerAlert: FC<PlayerAlertProps> = memo(({ 
-  children, isOpen, className, elRef 
-}) => {
+export const PlayerAlert = memo(forwardRef<HTMLDivElement, PlayerAlertProps>((props, ref) => {
 
-  const cls = [s.alert]
-  if (className) cls.push(className)
+  const { children, isOpen, className } = props
 
   return (
     <CSSTransition 
@@ -23,9 +21,9 @@ export const PlayerAlert: FC<PlayerAlertProps> = memo(({
       mountOnEnter 
       unmountOnExit
     >
-      <div className={cls.join(' ')} ref={elRef}>
+      <div className={classNames(s.alert, className)} ref={ref}>
         {children}
       </div>
     </CSSTransition>
   )
-})
+}))

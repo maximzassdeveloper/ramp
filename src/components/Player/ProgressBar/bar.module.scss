@@ -56,28 +56,22 @@ $height: 120px;
 }
 
 .handle {
-  composes: handle from '@/components/generetic/Slider/slider.module.scss';
   height: 18px;
   width: 18px;
+  margin-left: -9px;
   z-index: 4;
   box-shadow: 0 0 4px rgba(#000, .3);
 }
 
-@mixin line {
+.rail {
+  background: rgba(#c4c4c4, .5);
+  z-index: 1;
   height: 5px;
 }
 
-.rail {
-  composes: rail from '@/components/generetic/Slider/slider.module.scss';
-  background: rgba(#c4c4c4, .5);
-  z-index: 1;
-  @include line;
-}
-
 .track, .buffered {
-  composes: track from '@/components/generetic/Slider/slider.module.scss';
   z-index: 3;
-  @include line;
+  height: 5px;
 }
 
 .buffered {

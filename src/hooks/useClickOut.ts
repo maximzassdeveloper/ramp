@@ -19,9 +19,6 @@ export const useClickOut = (onClickOut?: (e: MouseEvent) => void) => {
   }, [ref])
 
   return {
-    ref,
-    isOpen: true,
-    setIsOpen: (bool: any) => null,
-    sourceRef: null
+    ref
   }
 }

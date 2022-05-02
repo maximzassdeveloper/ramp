@@ -50,3 +50,18 @@
     width: 100px;
   }
 }
+
+.enter {
+  opacity: 1;
+}
+.enterDone {
+  opacity: 0;
+  transition: .2s;
+}
+.exit {
+  opacity: 0;
+}
+.exitDone {
+  opacity: 1;
+  transition: .2s;
+}

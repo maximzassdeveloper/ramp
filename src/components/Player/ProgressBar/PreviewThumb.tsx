@@ -1,8 +1,7 @@
 import { FC, RefObject, useRef, useState, useEffect, memo } from 'react'
 import { convertTime } from '@/utils/convertTime'
-import { IThumb, loadThumb, loadThumbs, loadVideoThumbs } from './loadVideoThumbs'
+import { IThumb, loadThumbs } from './loadVideoThumbs'
 import styles from './bar.module.scss'
-import { Loader } from '@/components/Loader'
 
 interface PreviewThumbProps {
   video: RefObject<HTMLVideoElement>
@@ -12,7 +11,6 @@ interface PreviewThumbProps {
 
 export const PreviewThumb: FC<PreviewThumbProps> = memo(({ video, slider, duration }) => {
 
-  // const [thumbs, setThumbs] = useState<IThumb[]>([])
   const thumbs = useRef<IThumb[]>([])
   const [previewTime, setPreviewTime] = useState(0)
   const previewLeft = useRef(0)
@@ -35,17 +33,15 @@ export const PreviewThumb: FC<PreviewThumbProps> = memo(({ video, slider, durati
       previewLeft.current = offsetX
     }
     
-    const newTime = Math.round(offsetX / width * duration)
+    let newTime = Math.round(offsetX / width * duration)
     if (previewTime !== newTime) {
+      if (newTime > duration) newTime = duration
       setPreviewTime(newTime)
 
-      // console.log(thumbs)
       for (const thumb of thumbs.current) {
         const curSec = thumb.sec.find(i => i.index === newTime)
         
         if (curSec) {
-          // console.log(thumb)
-          // console.log(curSec.bgPosX, curSec.bgPosY)
           previewImage.current.style.backgroundImage = `url(${thumb.url})`
           previewImage.current.style.backgroundPositionX = `${curSec.bgPosX}px`
           previewImage.current.style.backgroundPositionY = `${curSec.bgPosY}px`
@@ -62,9 +58,6 @@ export const PreviewThumb: FC<PreviewThumbProps> = memo(({ video, slider, durati
     cloneVideo.width = 200
     cloneVideo.height = 120
     cloneVideo.style.display = 'none'
-    // console.log(loadThumbs(cloneVideo, duration))
-    // setThumbs(loadThumbs(cloneVideo, duration))
-    // thumbs.current = loadVideoThumbs(duration, cloneVideo)
     thumbs.current = loadThumbs(cloneVideo, duration)
 
     slider.current?.addEventListener('mousemove', onMouseMove)

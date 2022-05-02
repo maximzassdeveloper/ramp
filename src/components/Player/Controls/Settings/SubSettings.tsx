@@ -1,24 +1,23 @@
-import { FC, MouseEventHandler, RefObject } from 'react'
-import { ISetting } from './PlayerSettings'
+import { forwardRef, MouseEventHandler } from 'react'
 import { SubSettingsItem } from './SettingsItem'
+import { ICurSetting } from './SettingsWrapper'
+import cn from 'classnames'
 import s from './settings.module.scss'
 
 interface SubSettingsProps {
-  setting: ISetting | null
-  elRef: RefObject<HTMLDivElement>
+  setting: ICurSetting | null
   onClick?: MouseEventHandler
 }
 
-export const SubSettings: FC<SubSettingsProps> = ({ setting, elRef, onClick }) => {
+export const SubSettings = forwardRef<HTMLDivElement, SubSettingsProps>((props, ref) => {
 
-  const cls = [s.subSettings]
-  if (setting) cls.push(s.subSettingsActive)
+  const { setting, onClick } = props
 
   return (
-    <div className={cls.join(' ')} ref={elRef}>
+    <div ref={ref} className={cn(s.subSettings, { [s.subSettingsActive]: setting })}>
 
       <div className={s.subSettingsHeader} onClick={onClick}>
-        <i className="ph-caret-left"></i> 
+        <i className='ph-caret-left' /> 
         <span>{setting?.name || ''}</span>
       </div>
 
@@ -28,11 +27,11 @@ export const SubSettings: FC<SubSettingsProps> = ({ setting, elRef, onClick }) =
             key={op+i} 
             value={op} 
             active={op === setting.value}
-            onClick={setting.func}
+            onClick={setting.onSelect}
           />
         )}
       </div>
 
     </div>
   )
-}
+})

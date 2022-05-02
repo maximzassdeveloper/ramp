@@ -5,6 +5,7 @@ export interface IPlayerContext {
   isPlay: boolean
   duration: number
   sources: IVideoSource[]
+  setSource: (source: IVideoSource) => void
   changePlay: (flag?: boolean) => void
   video: RefObject<HTMLVideoElement>
   playerRef: RefObject<HTMLDivElement>

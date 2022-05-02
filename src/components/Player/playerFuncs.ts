@@ -21,9 +21,6 @@ export const checkCanPlay = (type?: string) => {
 }
 
 // Key events
-
-
-
 export const keyDownHandler = (code: number, context: IPlayerContext) => {
   const { changePlay, video } = context
   if (!video.current) return
@@ -45,11 +42,15 @@ export const keyDownHandler = (code: number, context: IPlayerContext) => {
       if (currentTime < 5) updated = 0
       return video.current.currentTime = updated
     case 38:
-    // ArrowUp
-    // return video.current.volume += .05
-    case 36:
-    // ArrowDown
-    // return video.current.volume -= .05
+      // ArrowUp
+      updated = video.current.volume + .05
+      if (updated > 1) updated = 1
+      return video.current.volume = updated
+    case 40:
+      // ArrowDown
+      updated = video.current.volume - .05
+      if (updated < 0) updated = 0
+      return video.current.volume = updated
   }
 }
 

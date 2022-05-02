@@ -1,4 +1,5 @@
-import { FC, useEffect, useRef, useState } from 'react'
+import { FC, useCallback, useEffect, useRef, useState } from 'react'
+import { CSSTransition } from 'react-transition-group'
 import { Controls } from './Controls/Controls'
 import { PlayerHeader } from './PlayerHeader'
 import { PlayButton } from './common'
@@ -20,8 +21,22 @@ export const Player: FC<VideoProps> = ({ sources }) => {
   const [duration, setDuration] = useState(0)
   const video = useRef<HTMLVideoElement>(null)
   const playerRef = useRef<HTMLDivElement>(null)
+
+  const inactionTimeout = useRef<any>(null)
+  const [isInaction, setIsInaction] = useState(false)
   
-  const changePlay = (flag?: boolean) => {
+  
+  const defaultContext: IPlayerContext = { 
+    isPlay, 
+    changePlay, 
+    setSource,
+    sources,
+    video, 
+    duration, 
+    playerRef 
+  }
+
+  function changePlay(flag?: boolean) {
     if (flag !== undefined) {
       flag ? video.current?.play() : video.current?.pause()
       setIsPlay(flag)
@@ -31,20 +46,19 @@ export const Player: FC<VideoProps> = ({ sources }) => {
     }
   }
 
-  const defaultContext: IPlayerContext = { 
-    isPlay, 
-    changePlay, 
-    sources,
-    video, 
-    duration, 
-    playerRef 
+  function setSource(source: IVideoSource) {
+    const isCanPlay = checkCanPlay(source.type)
+    if (isCanPlay) {
+      setSrc(source.url)
+      return true
+    }
+    return false
   }
   
   const initVideo = () => {
     if (!video.current) return
 
     video.current.volume = 0
-    // video.current.duration = 4140
 
     changePlay(true)
   }
@@ -53,8 +67,20 @@ export const Player: FC<VideoProps> = ({ sources }) => {
     setDuration(Math.floor(e.target.duration ?? 0))
   }
 
+  
+  const inactionCallback = useCallback(() => {
+    setIsInaction(false)
+    
+    clearTimeout(inactionTimeout.current)
+    inactionTimeout.current = setTimeout(() => {
+      setIsInaction(true)
+    }, 4000)
+  }, [])
+
   const onKeyDown = (e: KeyboardEvent) => {
     e.preventDefault()
+    inactionCallback()
+    
     if (!video.current) return
     keyDownHandler(e.keyCode, defaultContext)
   }
@@ -62,20 +88,17 @@ export const Player: FC<VideoProps> = ({ sources }) => {
   // Select optimal source
   useEffect(() => {
     for (const source of sources) {
-      const isCanPlay = checkCanPlay(source.type)
-
-      if (isCanPlay) {
-        setSrc(source.url)
-        break
-      }
+      if (setSource(source)) break
     }
   }, [sources])
 
   // key event
   useEffect(() => {
     document.addEventListener('keydown', onKeyDown)
+    document.addEventListener('mousemove', inactionCallback)
     return () => {
       document.removeEventListener('keydown', onKeyDown)
+      document.removeEventListener('mousemove', inactionCallback)
     }
   }, [defaultContext])
   
@@ -103,8 +126,12 @@ export const Player: FC<VideoProps> = ({ sources }) => {
         <PlayButton center />
         <Loader isLoading={isLoading} className={styles.playerLoader} />
         
-        <PlayerHeader />
-        <Controls />
+        <CSSTransition in={isInaction} timeout={200} classNames={{...styles}}>
+          <div style={...styles}>
+            <PlayerHeader />
+            <Controls />
+          </div>
+        </CSSTransition>
       </div>
 
     </PlayerProvider>

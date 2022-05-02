@@ -27,6 +27,7 @@
   .list {
     height: 450px;
     overflow-y: auto;
+    padding-right: 10px;
     &::-webkit-scrollbar {
         width: 4px;
     }
@@ -41,8 +42,37 @@
   }
 }
 
-.episodeVertical {
-  composes: vertical from "../Episode/episode.module.scss";
+// Episode Vertical
+.episode {
+  margin-bottom: 15px;
+  .image {
+    width: 180px;
+    height: 100px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    img {
+      border-radius: inherit;
+    }
+  }
+  .title {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+  .count {
+    font-size: 16px;
+    height: auto;
+    width: auto;
+    background: transparent;
+    border-radius: 0;
+    margin-right: 8px;
+  }
+  .timing {
+    display: none;
+  }
+}
+
+.episodeActive img {
+  border: 2px solid $accent;
 }
 
 .play {

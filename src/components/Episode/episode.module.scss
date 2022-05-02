@@ -59,28 +59,3 @@
   font-weight: 600;
   line-height: 1em;
 }
-
-.vertical {
-  margin-bottom: 15px;
-  .image {
-    width: 180px;
-    height: 100px;
-    border-radius: 5px;
-    margin-bottom: 5px;
-  }
-  .title {
-    font-size: 16px;
-    margin-bottom: 0;
-  }
-  .count {
-    font-size: 16px;
-    height: auto;
-    width: auto;
-    background: transparent;
-    border-radius: 0;
-    margin-right: 8px;
-  }
-  .timing {
-    display: none;
-  }
-}

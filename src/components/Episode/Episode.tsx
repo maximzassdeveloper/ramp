@@ -1,30 +1,31 @@
-import { FC } from 'react'
+import { FC, useMemo } from 'react'
 import { useActions } from '@/hooks/useActions'
 import { IEpisode, IFilm } from '@/types/film'
-import s from './episode.module.scss'
+import { combineStyles } from '@/utils/combineStyles'
+import cn from 'classnames'
+import styles from './episode.module.scss'
 
 interface EpisodeProps {
   episode: IEpisode
   count: number
   film: IFilm
   className?: string
+  classes?: any
 }
 
-export const Episode: FC<EpisodeProps> = ({ episode, count, film, className }) => {
+export const Episode: FC<EpisodeProps> = ({ episode, count, film, className, classes }) => {
 
+  const s = useMemo(() => combineStyles(styles, classes), [classes])
   const { openPlayer } = useActions()
 
   const onClick = () => {
     openPlayer({ episode, film })
   }
 
-  const cls = [s.episode]
-  if (className) cls.push(className)
-
   return <>
-    <div className={cls.join(' ')}>
+    <div className={cn(s.episode, className)}>
       <div className={s.image} onClick={onClick}>
-        <img src={episode.preview} alt='' />
+        <img src={episode.preview} alt={episode.name} />
       </div>
       <div className={s.content}>
         <span className={s.count}>{count}</span>
