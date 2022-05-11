@@ -1,5 +1,5 @@
 import { FC, useState, useRef, useEffect } from 'react'
-import { Slider2 } from '@/components/generetic'
+import { Slider } from '@/components/generetic'
 import { usePlayerContext } from '../playerContext'
 import { PreviewThumb } from './PreviewThumb'
 import styles from './bar.module.scss'
@@ -62,7 +62,7 @@ export const ProgressBar: FC = () => {
         duration={duration}
       />
 
-      <Slider2 
+      <Slider
         ref={sliderRef}
         value={time}
         max={duration}

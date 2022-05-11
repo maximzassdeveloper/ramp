@@ -8,5 +8,13 @@ export { Player } from './Player/Player'
 export { PlayerWrapper } from './Player/PlayerWrapper'
 export { Search } from './Search/Search'
 export { Loader } from './Loader'
+
 export { Film } from './Film/Film'
 export { FilmList } from './FilmList/FilmList'
+export { FilmListByCategory } from './FilmList/FilmListByCategory'
+
+export { Comment } from './Comment/Comment'
+export { CommentList } from './CommentList/CommentList'
+
+export { LoginForm } from './AuthForms/LoginForm'
+export { RegisterForm } from './AuthForms/RegisterForm'

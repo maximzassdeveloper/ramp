@@ -25,7 +25,7 @@
     "dist",
     "scripts",
     "jest",
-    "src/setupTests.ts"
+    "src/tests/setupTests.ts"
   ],
   "types": [
     "typePatches"

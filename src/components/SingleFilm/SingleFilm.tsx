@@ -1,65 +1,38 @@
-import { FC, useState } from 'react'
-import { Seasons } from '@/components'
-import { Overview, Navigation, Details, SelectRating } from '.'
+import { FC } from 'react'
 import { IFilm } from '@/types/film'
-import classNames from 'classnames'
+import { CommentList } from '@/components'
+import { Container } from '@/components/hoc'
+import { Title } from '@/components/generetic'
+import { SingleFilmScreen } from './SingleFilmScreen'
+import { FilmList } from '../FilmList/FilmList'
+import { useFetch } from '@/hooks/useFetch'
 import s from './single-film.module.scss'
 
 interface SignleFilmProps {
   film: IFilm
 }
 
-export type SingleFilmTab = 'Overview' | 'Episodes' | 'Details'
-
 export const SingleFilm: FC<SignleFilmProps> = ({ film }) => {
 
-  const [activeTab, setActiveTab] = useState<SingleFilmTab>('Overview')
-  const [isShowRating, setIsShowRating] = useState(false)
- 
-  const classes = classNames(s.film, {
-    [s.filmEpisodes]: activeTab === 'Episodes',
-    [s.filmDetails]: activeTab === 'Details' 
-  })
+  const { data: films } = useFetch<IFilm[]>('/films')
 
   return (
-    <div className={classes} style={{background: `url(${film.preview})`}}>
+    <div className={s.film}>
 
-      <div className={s.titleWrapper}>
-        <h1 className={s.title}>{film.name}</h1>
-      </div>
+      <SingleFilmScreen film={film} />
 
-      <div className={s.filmFadingBlock}>
-        <Overview 
-          film={film} 
-          isShow={activeTab === 'Overview'}
-          onOpenRating={() => setIsShowRating(true)}
-        />  
-
-        <Details 
-          film={film} 
-          isShow={activeTab === 'Details'}
-        />
-      </div>
-
-      <Navigation 
-        activeTab={activeTab} 
-        filmType={film.type}
-        onChange={setActiveTab} 
-      />
-
-      <SelectRating 
-        isShow={isShowRating} 
-        film={film}
-        onClose={() => setIsShowRating(false)} 
-      />
-      
-      {film.seasons && <div className={s.seasonsWrapper}>
-        <Seasons 
-          film={film} 
-          seasons={film.seasons} 
-          classes={s}
-        />
-      </div>}
+      <Container className={s.container}>
+        <div style={{ display: 'flex' }}>
+          <div>
+            <Title>Comments ({film.comments?.length})</Title>
+            <br />
+            <CommentList comments={film.comments} />
+          </div>
+          <div>
+            <FilmList className={s.dop} films={films} />
+          </div>
+        </div>
+      </Container>
 
     </div>
   )

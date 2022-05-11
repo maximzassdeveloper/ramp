@@ -1,3 +1,3 @@
 {
-  "/films/:slug": "/films?slug=:slug"
+  "/films/:slug": "/films?slug=:slug&_expand=category&_embed=comments"
 }

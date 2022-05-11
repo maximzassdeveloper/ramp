@@ -1,0 +1,25 @@
+$rating-green: #5BC636;
+$rating-grey: #A4A4A4;
+$rating-red: #C63636;
+
+.rating {
+
+}
+
+.count {
+  font-size: 30px;
+  margin-right: 5px;
+  font-weight: 700;
+
+  &.ratingNumber {
+    font-size: 18px;
+  }
+
+  &.green { color: $rating-green; }
+  &.grey { color: $rating-grey; }
+  &.red { color: $rating-red; }
+}
+
+.views {
+  color: $grey;
+}

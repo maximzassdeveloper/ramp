@@ -1,47 +1,19 @@
-import { RefObject, useRef } from 'react'
+import { MutableRefObject, RefObject, useRef } from 'react'
 
-
-export const useDrag = (updateValue: (who: number) => void, sliderRef: RefObject<any>, step: number, isRange: boolean) => {
-  const percents = useRef(0) // First Handler
-  const percents2 = useRef(100) // Second Handler
+export const useDrag = (sliderRef: RefObject<HTMLDivElement>, onUpdate: () => void) => {
+  const offset = useRef(0)
 
   const onStartMove = (e: React.MouseEvent) => {
     if (!sliderRef.current) return
     e.stopPropagation()
 
     const { width, x: startX } = sliderRef.current.getBoundingClientRect()
+    calcOffset(e, offset, width, startX, onUpdate)
 
     const onMouseMove = (ev: MouseEvent) => {
       ev.preventDefault()
 
-      const { pageX: moveX } = ev
-      const offsetX = moveX - startX
-      
-      let perc = offsetX / width
-      perc = Math.round(perc * 100)
-
-      if (step) perc = calcStepRound(perc, step)
-      if (perc > 100) perc = 100
-      if (perc < 0) perc = 0
-
-      if (isRange) {
-        // Find which handler is closer
-        const closest = isClosest(percents.current, percents2.current, perc)
-        if (!closest) return
-        if (closest === 1 && percents.current !== perc) {
-          percents.current = perc
-          updateValue(1)
-        }
-        if (closest === 2 && percents2.current !== perc) {
-          percents2.current = perc
-          updateValue(2)
-        }
-      } else {
-        if (percents.current !== perc) {
-          percents.current = perc
-          updateValue(1)
-        }
-      }
+      calcOffset(ev, offset, width, startX, onUpdate)
     }
 
     const onMouseUp = () => {
@@ -55,33 +27,40 @@ export const useDrag = (updateValue: (who: number) => void, sliderRef: RefObject
 
   return {
     onStartMove,
-    percents,
-    percents2
+    offset,
   }
 }
 
-function calcStepRound (val: number, st: number): number {
-  let newVal = val
+function calcOffset(
+  e: MouseEvent | React.MouseEvent,
+  offsetRef: MutableRefObject<number>,
+  width: number,
+  startX: number,
+  onUpdate: () => void
+) {
+  const { pageX: moveX } = e
+  const offsetX = moveX - startX
 
-  const remain = st - (val % st)
-  if (remain <= st / 2) {
-    newVal += remain
-  } else {
-    newVal -= val % st
+  let perc = offsetX / width
+  perc = Math.floor(perc * 100)
+
+  if (perc > 100) perc = 100
+  if (perc < 0) perc = 0
+
+  if (offsetRef.current !== perc) {
+    offsetRef.current = perc
+    onUpdate()
   }
+  // if (!sliderRef.current) return
 
-  return newVal
-}
+  // const { pageX: moveX } = e
+  // let offsetX = moveX - startX
 
-function isClosest (num1: number, num2: number, source: number): number | null {
-  if (source > num2) {
-    return 2
-  } else if (source < num1) {
-    return 1
-  } else if (source > num1 && source < num2) {
-    const middle = Math.round((num2 - num1) / 2 + num1)
-    return source > middle ? 2 : 1
-  } else {
-    return null
-  }
+  // if (offsetX > width) offsetX = width
+  // else if (offsetX < 0) offsetX = 0
+
+  // if (offsetRef.current !== offsetX) {
+  //   offsetRef.current = Math.floor(offsetX)
+  //   onUpdate()
+  // }
 }

@@ -127,7 +127,7 @@ export const Player: FC<VideoProps> = ({ sources }) => {
         <Loader isLoading={isLoading} className={styles.playerLoader} />
         
         <CSSTransition in={isInaction} timeout={200} classNames={{...styles}}>
-          <div style={...styles}>
+          <div>
             <PlayerHeader />
             <Controls />
           </div>

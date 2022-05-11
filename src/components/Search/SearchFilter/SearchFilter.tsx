@@ -1,14 +1,10 @@
-import { Checkbox } from '@/components/generetic'
 import { FC, memo, useCallback, useState } from 'react'
 import { TypeFilter, RatingFilter, YearFilter, CategoryFilter } from './Filters'
+import { IFilter } from '../searchTypes'
 import s from './search-filter.module.scss'
 
-export interface IFilter {
-  [key: string]: any
-}
-
 interface SearchFilterProps {
-  onChange?: (filter: IFilter) => void
+  onChange: (filter: IFilter) => void
 }
 
 const defaultFilter: IFilter = {
@@ -20,21 +16,19 @@ const defaultFilter: IFilter = {
 
 export const SearchFilter: FC<SearchFilterProps> = memo(({ onChange }) => {
 
-  const [filter, setFilter] = useState<IFilter>(defaultFilter)
+  const [filter, setFilter] = useState(defaultFilter)
   
-  const changeHandler = (name: string, value: (string|number)[]) => {
-    const updated = Object.assign({}, filter) 
-
-    if (!value.length) updated[name] = defaultFilter[name]
-    updated[name] = value
-
-    setFilter(updated)
-    onChange?.(updated)
-  }
+  const changeHandler = useCallback((name: keyof IFilter, value: (string | number)[]) => {
+    setFilter(f => {
+      const updated = { ...f, [name]: value }
+      onChange(updated)
+      return updated
+    })
+  }, [])
 
   const clearFilter = () => {
     setFilter(defaultFilter)
-    onChange?.(defaultFilter)
+    onChange(defaultFilter)
   }
 
   return (

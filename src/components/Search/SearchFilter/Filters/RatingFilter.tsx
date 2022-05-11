@@ -15,13 +15,11 @@ export const RatingFilter: FC<RatingFilterProps> = memo(({ onChange, value: rati
 
   return (
     <FilterBlock title='Rating'>
-      <Slider 
+      <Slider.Range 
         onChange={sliderHandler}
         value={rating}
         min={0}
         max={10}
-        step={1}
-        range
       />
     </FilterBlock>
   )

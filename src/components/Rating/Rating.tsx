@@ -1,25 +1,37 @@
-import { FC } from 'react'
+import { FC, useMemo } from 'react'
 import { IRating } from '@/types/film'
-import {classnames} from '@/utils/classnames'
 import { convertViews } from '@/utils/convertViews'
-import './rating.scss'
+import { numDiapozone, numTrim } from '@/utils/helper'
+import classNames from 'classnames'
+import s from './rating.module.scss'
 
 interface RatingProps {
-  rating: IRating
+  rating?: IRating
+  ratingNumber?: number
 }
 
-const diap = (n: number, a: number, b: number) => a <= n && n <= b
+export const Rating: FC<RatingProps> = ({ rating, ratingNumber }) => {
 
-export const Rating: FC<RatingProps> = ({ rating: { count, views } }) => {
+  const color = useMemo(() => {
+    let count = rating?.count ?? ratingNumber
 
-  if (count > 10) count = 10
-  if (count < 0) count = 0
-  const ratingColor = diap(count, 7, 10) ? 'green' : diap(count, 4, 7) ? 'grey' : 'red'
+    if (count !== undefined) {
+      count = numTrim(count, 0, 10)
+      return numDiapozone(count, 7, 10) ? 'green' : numDiapozone(count, 4, 7) ? 'grey' : 'red'
+    }
+
+    return ''
+  }, [rating?.count, ratingNumber])
 
   return (
-    <div className="rating">
-      <span className={classnames('rating__count', ratingColor)}>{count}</span>
-      <span className="rating__views">{convertViews(views)}</span>
+    <div className={s.rating}>
+
+      <span className={classNames(s.count, s[color], { [s.ratingNumber]: ratingNumber !== undefined })}>
+        {rating?.count ?? ratingNumber}
+      </span>
+
+      {rating?.views && <span className={s.views}>{convertViews(rating.views)}</span>}
+
     </div>
   )
 }

@@ -1,3 +1,5 @@
+import { IComment } from './comment'
+
 export interface IFilmBase {
   id: number
   slug: string
@@ -12,8 +14,10 @@ export interface IFilmBase {
   ageLimit?: string
 
   trailers?: IEpisode[]
-  categories?: number[]
+  categoryId?: number
+  category?: ICategory
   details?: IDetails
+  comments?: IComment[]
 }
 
 export type FilmType = 'series' | 'movie'

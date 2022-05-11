@@ -34,6 +34,19 @@
   }
 }
 
+.close {
+  position: absolute;
+  right: -220px;
+  top: 13px;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  border: 1px solid $grey;
+  i {
+    color: $grey;
+  }
+}
+
 .searchList {
   width: 100%;
   background: $grey-bg;
@@ -41,7 +54,7 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(#000, .2);
   text-align: center;
-  overflow-y: auto;
+  @include custom-scrollbar;
 }
 
 .itemsCount {

@@ -1,4 +1,4 @@
-import { FC, memo } from 'react'
+import { FC } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import { Rating } from '@/components'
 import { IFilm } from '@/types/film'
@@ -18,7 +18,7 @@ export const Overview: FC<OverviewProps> = ({ film, isShow, onOpenRating }) => {
 
       <div className={s.options}>
         {film.year && <span>{film.year}</span>}
-        {film.categories && <span>{film.categories.join(', ')}</span>}
+        {film.category && <span>{film.category.name}</span>}
         {film.ageLimit && <span className={s.ageLimit}>{film.ageLimit}</span>}
         <Rating rating={film.rating} />
       </div>

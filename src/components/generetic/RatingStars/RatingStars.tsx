@@ -1,5 +1,5 @@
-import classNames from 'classnames'
 import { FC, memo, useMemo, useState } from 'react'
+import classNames from 'classnames'
 import s from './rating-stars.module.scss'
 
 interface RatingStarsProps {

@@ -1,14 +1,22 @@
-import { FC } from 'react'
+import { FC, MouseEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { RouteNames } from '@/router'
 import { useActions, useTypedSelector } from '@/hooks'
 import { Search } from '@/components'
+import { RootState } from '@/store'
 import styles from './sidebar.module.scss'
+
+const selector = (state: RootState) => ({ ...state.user, ...state.search})
 
 export const Sidebar: FC = () => {
 
-  const { openSearch } = useActions()
-  const { isOpen } = useTypedSelector(s => s.search)
+  const { isOpen, isAuth } = useTypedSelector(selector)
+  const { openSearch, logout } = useActions()
+
+  const onClickSearchIcon = (e: MouseEvent) => {
+    e.stopPropagation()
+    openSearch()
+  }
 
   return <>
     <aside className={styles.sidebar}>
@@ -28,18 +36,30 @@ export const Sidebar: FC = () => {
 
           <li 
             title='Search' 
-            onClick={openSearch} 
+            onClick={onClickSearchIcon} 
             className={isOpen ? styles.active : ''}
             data-search-link
           >
             <i className="ph-magnifying-glass" />
           </li>
 
-          <li title='Favourites'>
-            <Link to={RouteNames.FAVOURITES}>
-              <i className="ph-bookmark-simple" />
+          {isAuth && <>
+            <li title='Favourites'>
+              <Link to={RouteNames.FAVOURITES}>
+                <i className="ph-bookmark-simple" />
+              </Link>
+            </li>
+
+            <li title='Logout' onClick={logout}>
+              <i className='ph-sign-out' />
+            </li>
+          </>}
+
+          {!isAuth && <li>
+            <Link to={RouteNames.LOGIN}>
+              <i className="ph-user" />
             </Link>
-          </li>
+          </li>}
 
         </ul>
       </nav>

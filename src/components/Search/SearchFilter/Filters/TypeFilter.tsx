@@ -7,7 +7,7 @@ interface TypeFilterProps {
   value: string[]
 }
 
-const list = [
+const typesList = [
   { label: 'Series', value: 'series' },
   { label: 'Movie', value: 'movie' },
 ]
@@ -16,7 +16,7 @@ export const TypeFilter: FC<TypeFilterProps> = memo(({ onChange, value: types })
 
   const checkboxHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = e.target
-    let newTypes = types
+    let newTypes = [...types]
     if (!checked) {
       newTypes = newTypes.filter(i => i !== value)
     } else {
@@ -29,14 +29,14 @@ export const TypeFilter: FC<TypeFilterProps> = memo(({ onChange, value: types })
 
   return (
     <FilterBlock title='Type'>
-      {list.map((ch, i) => 
+      {typesList.map((type, i) => 
         <Checkbox 
-          key={ch.value + i}
-          name={ch.value}
-          label={ch.label}
-          value={ch.value}
+          key={type.value + i}
+          name={type.value}
+          label={type.label}
+          value={type.value}
           onChange={checkboxHandler} 
-          checked={!!types.find(x => x === ch.value)}
+          checked={!!types.find(i => i === type.value)}
         />
       )}
     </FilterBlock>

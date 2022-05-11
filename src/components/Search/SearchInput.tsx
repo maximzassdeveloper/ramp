@@ -1,4 +1,4 @@
-import { FC, useState, ChangeEvent, memo } from 'react'
+import { FC, ChangeEvent, memo, useState } from 'react'
 import { Input, ToggleIcon } from '../generetic'
 import s from './search.module.scss'
 
@@ -11,13 +11,13 @@ export const SearchInput: FC<SearchInputProps> = memo(({ onChange }) => {
   const [value, setValue] = useState('')
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value)
     onChange(e.target.value)
+    setValue(e.target.value)
   }
 
   const cleanHandler = () => {
-    setValue('')
     onChange('')
+    setValue('')
   }
 
   return (
@@ -29,9 +29,11 @@ export const SearchInput: FC<SearchInputProps> = memo(({ onChange }) => {
         placeholder='Search'
       />
       <div className={s.inputIcon}>
-        <ToggleIcon toggle={!value.trim()}><i className="ph-magnifying-glass"></i></ToggleIcon>
+        <ToggleIcon toggle={!value.trim()}>
+          <i className="ph-magnifying-glass" />
+        </ToggleIcon>
         <ToggleIcon toggle={!!value.trim()}>
-          <i onClick={cleanHandler} className="ph-x"></i>
+          <i onClick={cleanHandler} className="ph-x" />
         </ToggleIcon>
       </div>
     </div>

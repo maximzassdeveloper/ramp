@@ -1,8 +1,7 @@
 export { Button } from './Button/Button'
 export { default as Input } from './Input'
 export { Checkbox } from './Checkbox/Checkbox'
-export { Slider } from './Slider/Slider'
-export { Slider2 } from './Slider/Slider2'
+export { default as Slider } from './Slider'
 export { Title } from './Title/Title'
 export { RatingStars } from './RatingStars/RatingStars'
 

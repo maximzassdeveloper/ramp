@@ -1,15 +1,11 @@
 import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { BrowserRouter } from 'react-router-dom'
-import { store } from './store'
+import { MainProvider } from './components/MainProvider'
 import { App } from './components'
 import './styles/global.scss'
 
 render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>,
+  <MainProvider>
+    <App />
+  </MainProvider>,
   document.getElementById('root')
 )

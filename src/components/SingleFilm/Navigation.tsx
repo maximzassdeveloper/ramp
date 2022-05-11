@@ -1,6 +1,6 @@
 import { FC, useRef, useEffect, useMemo, memo } from 'react'
 import { FilmType } from '@/types/film'
-import { SingleFilmTab } from './SingleFilm'
+import { SingleFilmTab } from './SingleFilmScreen'
 import s from './single-film.module.scss'
 
 interface NavigationProps {

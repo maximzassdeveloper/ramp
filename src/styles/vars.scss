@@ -11,3 +11,21 @@ $grey-line: #646464;
 $grey-items: #494949;
 
 $disabled-bg: #343434;
+
+$error: #C63636;
+
+@mixin custom-scrollbar {
+  overflow-y: auto;
+  padding-right: 10px;
+  &::-webkit-scrollbar {
+      width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $grey-bg2;
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $grey-light-bg;
+    border-radius: 2px;
+  }
+}

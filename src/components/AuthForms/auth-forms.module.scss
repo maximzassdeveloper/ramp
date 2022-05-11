@@ -1,0 +1,32 @@
+.formWrapper {
+  position: relative;
+  width: 400px;
+  max-width: 100%;
+  padding: 22px 20px 30px;
+  border-radius: 10px;
+  background: $grey-bg;
+  box-shadow: 0 0 15px rgba(#000, .5);
+}
+
+.form {
+  width: 100%;
+}
+
+.submit {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 8px 20px;
+}
+
+.formError {
+  display: block;
+  color: $error;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.links a {
+  display: block;
+  color: $grey;
+  text-decoration: underline;
+}

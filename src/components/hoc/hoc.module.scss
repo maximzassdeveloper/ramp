@@ -1,4 +1,12 @@
 .container {
   width: 100%;
   padding: 40px 50px;
+  &.center {
+    display: flex;
+    justify-content: center;
+  }
+  &.verticalCenter {
+    display: flex;
+    align-items: center;
+  }
 }

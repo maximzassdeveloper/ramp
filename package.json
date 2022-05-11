@@ -21,6 +21,9 @@
     "react": "^17.0.2",
     "react-css-modules": "^4.7.11",
     "react-dom": "^17.0.2",
+    "react-hook-form": "^7.30.0",
+    "react-intersection-observer": "^9.1.0",
+    "react-query": "^3.38.1",
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.3.0",
     "react-transition-group": "^4.4.2",
@@ -31,6 +34,7 @@
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.17.10",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
@@ -59,7 +63,10 @@
     "html-webpack-plugin": "^5.5.0",
     "i": "^0.3.7",
     "jest": "^27.5.1",
+    "json-server": "^0.17.0",
+    "minimist": "^1.2.6",
     "npm": "^8.5.5",
+    "pluralize": "^8.0.0",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.2.8",
@@ -71,10 +78,16 @@
   "jest": {
     "testEnvironment": "jsdom",
     "moduleNameMapper": {
+      "@/(.*)": "<rootDir>/src/$1",
       "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js"
     },
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
     "setupFilesAfterEnv": [
-      "<rootDir>/src/setupTests.ts"
+      "<rootDir>/src/tests/setupTests.ts",
+      "@testing-library/jest-dom/extend-expect"
     ]
   }
 }

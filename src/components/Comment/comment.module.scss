@@ -1,0 +1,25 @@
+.comment {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  width: 500px;
+  max-width: 100%;
+  border-bottom: 1px solid $grey-items;
+}
+
+.header {
+  margin-bottom: 10px;
+}
+
+.subheader {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 5px;
+}
+
+.fullName {
+  margin-right: 10px;
+  color: $grey;
+}

@@ -1,52 +1,46 @@
-import { ChangeEvent, FC, memo, useEffect, useState } from 'react'
+import { ChangeEvent, FC, memo } from 'react'
+import { useQuery } from 'react-query'
 import { FilterBlock } from '../FilterBlock'
 import { Checkbox } from '@/components/generetic'
-import { ICategory } from '@/types/film'
-import { getCategories } from '@/services/filmService'
+import filmService from '@/services/filmService'
+import { Loader } from '@/components/Loader'
 
 interface CategoryFilterProps {
-  onChange: (name: string, value: string[]) => void
-  value: string[]
+  onChange: (name: string, value: number[]) => void
+  value: number[]
 }
 
-export const CategoryFilter: FC<CategoryFilterProps> = memo(({ onChange, value: cats }) => {
+export const CategoryFilter: FC<CategoryFilterProps> = memo(({ onChange, value: categories }) => {
 
-  const [list, setList] = useState<ICategory[]>([])
+  const { data: categoriesList, isLoading } = useQuery('get search categories', () => filmService.getCategories(), {
+    select: resp => resp.data,
+    refetchOnMount: false
+  })
 
   const checkboxHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = e.target
-    let newCats = cats
+    let newCats = [...categories]
     if (!checked) {
-      newCats = newCats.filter(i => i !== value)
+      newCats = newCats.filter(i => i !== +value)
     } else {
-      const curIndex = newCats.indexOf(value)
-      if (curIndex === -1) newCats = [...newCats, value]
+      const curIndex = newCats.indexOf(+value)
+      if (curIndex === -1) newCats = [...newCats, +value]
     }
 
     onChange('categories', newCats)
   }
 
-  useEffect(() => {
-    const g = async () => {
-      try {
-        setList((await getCategories()).data)
-      } catch {
-        console.log('Categories not loaded')
-      }
-    }
-    g()
-  }, [])
-
   return (
     <FilterBlock title='Categories'>
-      {list.map(ch => 
+      {isLoading && <Loader isLoading={isLoading} />}
+      {!isLoading && categoriesList?.map(category => 
         <Checkbox 
-          key={ch.slug}
-          label={ch.name}
-          name={ch.slug}
-          value={ch.slug}
+          key={category.slug}
+          label={category.name}
+          name={category.slug}
+          value={category.id.toString()}
           onChange={checkboxHandler} 
-          checked={!!cats.find(x => x === ch.slug)}
+          checked={!!categories.find(i => i === category.id)}
         />
       )}
     </FilterBlock>

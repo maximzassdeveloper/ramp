@@ -1,7 +1,9 @@
 .input {
   position: relative;
   max-width: 100%;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  padding-bottom: 0;
+  transition: .2s;
   input {
     width: 100%;
     max-width: 100%;
@@ -26,6 +28,31 @@
       }
     }
   }
+  &.inputError {
+    padding-bottom: 25px;
+    .error {
+      transform: translate(0);
+      opacity: 1;
+    }
+  }
+}
+
+.label {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.error {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: $error;
+  font-size: 16px;
+  transition: .2s;
+  transform: translateY(5px);
+  opacity: 0;
 }
 
 .inputNumber {
@@ -85,6 +112,27 @@
     }
     i {
       font-size: 14px;
+      color: $grey;
+    }
+  }
+}
+
+.inputPassword {
+  input {
+    padding: 8px 35px 8px 12px;
+  }
+  & .passwordIcon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    bottom: 5px;
+    right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    i {
+      font-size: 18px;
       color: $grey;
     }
   }

@@ -1,9 +1,9 @@
+import { FC, MouseEvent } from 'react'
 import cn from 'classnames'
-import { FC } from 'react'
 import s from './ui.module.scss'
 
 interface CloseIconProps {
-  onClick?: () => void
+  onClick?: (e: MouseEvent<HTMLDivElement>) => void
   className?: string
 }
 

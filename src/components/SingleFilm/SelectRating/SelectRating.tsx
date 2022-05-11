@@ -15,8 +15,6 @@ export const SelectRating: FC<SelectRatingProps> = memo(({ isShow, onClose, film
 
   const [value, setValue] = useState(0)
 
-  console.log('select rare rerender')
-
   const changeHandler = (val: number) => {
     setValue(val)
   }

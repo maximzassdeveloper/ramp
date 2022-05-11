@@ -1,29 +1,16 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect } from 'react'
 import { useActions, useTypedSelector } from '@/hooks'
+import { FilmList, FilmListByCategory } from '@/components'
+import { Title } from '@/components/generetic'
+import { useFetch } from '@/hooks/useFetch'
+import { ICategory } from '@/types/film'
 import styles from './home.module.scss'
-import { FilmList } from '@/components'
-import { RatingStars, Title } from '@/components/generetic'
-
-const label: any = {
-  1: 'Terrible',
-  2: 'Bad',
-  3: 'Bad',
-  4: 'Bad',
-  5: 'Normal',
-  6: 'Normal',
-  7: 'Good',
-  8: 'Good',
-  9: 'Wonderful',
-  10: 'Excellent',
-}
 
 export const Home: FC = () => {
 
   const { films, isLoading, error } = useTypedSelector(s => s.film)
   const { fetchFilms } = useActions()
-
-  const [value, setValue] = useState(0)
-  const [labelText, setLabelText] = useState('')
+  const { data: categories } = useFetch<ICategory[]>('/categories')
 
   useEffect(() => {
     fetchFilms()
@@ -38,15 +25,10 @@ export const Home: FC = () => {
         error={error} 
       />
 
-      <RatingStars 
-        value={value}
-        count={10}
-        size='large'
-        showIndex
-        onChange={v => {
-          setValue(v)
-        }}
-      />
+      {categories.map(category => 
+        <FilmListByCategory key={category.id} category={category} />
+      )}
+      
     </div>
   )
 }

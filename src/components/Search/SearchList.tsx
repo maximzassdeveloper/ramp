@@ -1,16 +1,19 @@
 import { FC, useEffect, useRef, useState } from 'react'
-import { useTypedSelector } from '@/hooks'
-import { Loader } from '../Loader'
+import { Loader } from '@/components/Loader'
+import { Button } from '@/components/generetic'
 import { SearchFilm } from './SearchFilm/SearchFilm'
+import { IFetchedData } from './searchTypes'
 import s from './search.module.scss'
 
-export const SearchList: FC = () => {
+interface SearchListProps {
+  films: IFetchedData[]
+  isLoading: boolean
+  error: Error
+  isShowButton: boolean
+  buttonRef: any
+}
 
-  const {
-    filtered: films,
-    isFilteredLoading: isLoading,
-    filteredError: error
-  } = useTypedSelector(s => s.film)
+export const SearchList: FC<SearchListProps> = ({ films, isLoading, error, isShowButton, buttonRef }) => {
 
   const [height, setHeight] = useState('')
   const list = useRef<HTMLDivElement>(null)
@@ -33,16 +36,16 @@ export const SearchList: FC = () => {
     >
       {isLoading 
         ? <Loader isLoading={isLoading} />
-        : <>
-          {error && <span className={s.notfound}>{error}</span>}
-          {!error && !films.length && <span className={s.notfound}>No results</span>}
-          {!error && !!films.length && <>
-            <span className={s.itemsCount}>{films.length} items</span>
-            {films.map(film => 
-              <SearchFilm key={film.id} film={film} />
+        : (error || !films.length || !films[0]?.films.length) 
+          ? <span className={s.notfound}>{error ? error.message : 'No results'}</span>
+          : <>
+            {films.map(page => 
+              page.films.map(film => 
+                <SearchFilm key={film.id} film={film} />
+              )
             )}
-          </>}
-        </>
+            {isShowButton && <Button ref={buttonRef} size='small'>Load more</Button>}
+          </>
       }
     </div>
   )

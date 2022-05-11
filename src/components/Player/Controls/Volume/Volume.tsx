@@ -1,6 +1,6 @@
 import { FC, memo, useCallback, useEffect, useRef, useState } from 'react'
 import { usePlayerContext } from '../../playerContext'
-import { Slider2 } from '@/components/generetic'
+import { Slider } from '@/components/generetic'
 import styles from './volume.module.scss'
 
 export const Volume: FC = memo(() => {
@@ -49,7 +49,7 @@ export const Volume: FC = memo(() => {
         {renderIcon()}
       </div>
 
-      <Slider2 
+      <Slider
         value={volume*100}
         labelText={Math.round(volume*100)}
         onChange={onSliderChange}

@@ -48,7 +48,7 @@ export interface FetchFilteredFilmsErrorAction {
   payload: string
 }
 
-export type FilmAction = 
+export type FilmAction =
   FetchFilmsAction
   | FetchFilmsSuccessAction
   | FetchFilmsErrorAction
