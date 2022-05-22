@@ -6,13 +6,16 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "start": "webpack --mode development",
-    "build": "webpack --mode production --config webpack.config.js",
+    "build": "webpack --mode production",
     "test": "jest --detectOpenHandles",
     "server": "json-server --watch server/db.json --routes server/routes.json --port 5000"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "@splidejs/react-splide": "^0.6.20",
     "axios": "^0.26.1",
