@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "webpack --config ./webpack.config.js --progress",
     "dev": "webpack-dev-server",
     "start": "webpack --mode development",
-    "build": "webpack --mode production",
+    "build": "webpack --mode production --config webpack.config.js",
     "test": "jest --detectOpenHandles",
     "server": "json-server --watch server/db.json --routes server/routes.json --port 5000"
   },
