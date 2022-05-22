@@ -62,6 +62,12 @@ export const LoginForm: FC = () => {
         <div className={s.links}>
           <Link to={RouteNames.REGISTER}>Register</Link>
         </div>
+
+        <div className={s.testData}>
+          <span>Login: daniel@gmail.com</span>
+          <span>Password: daniel</span>
+          <span>Or register</span>
+        </div>
       </form>
     </div>
   )

@@ -1,0 +1,32 @@
+.addComment {
+  position: relative;
+  width: 500px;
+  max-width: 100%;
+  padding: 22px 20px 30px;
+  border-radius: 10px;
+  
+  &.notAuth {
+    height: 250px;
+  }
+}
+
+.notAuthPlaceholder {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  text-align: center;
+  height: 100%;
+  background: $grey-bg;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    font-size: 18px;
+  }
+  button {
+    margin: 15px auto 0;
+  }
+}

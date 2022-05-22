@@ -68,16 +68,13 @@ export const PreviewThumb: FC<PreviewThumbProps> = memo(({ video, slider, durati
 
   return (
     <div 
-      // ref={previewDiv}
       className={styles.preload}
       style={{ left: `${previewLeft.current}px` }}
     >
       <div 
         ref={previewImage}
         className={styles.preloadImage}
-        // style={{ backgroundImage: `url(${thumbs.current[previewTime] || ''})` }}
       >
-        {/* <Loader loading={!thumbs[previewTime]} /> */}
       </div>
       <span className={styles.preloadTime}>{convertTime(previewTime)}</span>
     </div>

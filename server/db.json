@@ -2,14 +2,14 @@
   "films": [
     {
       "id": 1,
-      "slug": "the-queen-s-gambit",
+      "slug": "the-queens-gambit",
       "name": "The Queen's Gambit",
       "rating": {
         "count": 8.7,
         "views": 1400
       },
       "type": "series",
-      "preview": "https://www.kino-teatr.ru/art/5786/82075.jpg",
+      "preview": "queens-gambit/queens-gambit-poster.jpg",
       "year": 2020,
       "ageLimit": "18+",
       "categoryId": 1,
@@ -42,10 +42,10 @@
           "id": 1,
           "name": "Trailer 1",
           "timing": "2.6 min",
-          "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQVbsz79M2Z9CWcQSJHCsm-giqZHvLoOaxsDsKbg-iULqa3iygNtBSsuDYk-9b03WPSUNgU6jbJka3j2w4T0IxRcAdl3WNrXvThL10husx9KJMyH.jpg?r=1bc",
+          "preview": "queens-gambit/trailer1.jpg",
           "video": [
             {
-              "url": "http://localhost:4300/assets/queen-gambit.mp4",
+              "url": "queens-gambit/queens-gambit.mp4",
               "type": "video/mp4",
               "size": "720"
             }
@@ -55,11 +55,11 @@
         {
           "id": 2,
           "name": "Trailer 2",
-          "timing": "3.1 min",
-          "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABeHUH8Y__Yg-vwwoYlc1o4PscsFCMHliKK5INHnPAlhSA-IMfSwt0L3GzAI6hG9mCgy8qwnrn2gC1EJwGiUyqVObs4p1tSjFUBXnLZhF-G_OuU4j.jpg?r=83b",
+          "timing": "34sec",
+          "preview": "queens-gambit/trailer2.jpg",
           "video": [
             {
-              "url": "http://localhost:4300/assets/queen-gambit.mp4",
+              "url": "queens-gambit/queens-gambit2.mp4",
               "type": "video/mp4",
               "size": "720"
             }
@@ -76,10 +76,15 @@
               "id": 3,
               "name": "Openings",
               "timing": "61 min",
-              "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABdGMnrCCAllmg2PSnKj6DnL_CAhz2i7KShxGvshWD41BszKbuwRezmhCNgv0PmQPzz-7haF05mrKUZpVeJTXvI_lHF64g9jzbBaPytlKvUZRFmFv.jpg?r=4e3",
+              "preview": "queens-gambit/1.jpg",
               "video": [
                 {
-                  "url": "http://localhost:4300/assets/queen-gambit.mp4",
+                  "url": "queens-gambit/queens-gambit.mp4",
+                  "type": "video/mp4",
+                  "size": "1080"
+                },
+                {
+                  "url": "queens-gambit/queens-gambit2.mp4",
                   "type": "video/mp4",
                   "size": "720"
                 }
@@ -89,12 +94,12 @@
             {
               "id": 4,
               "name": "Exchanges",
-              "timing": "65 min",
-              "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaciRaaAtEogMeyOkQBoOpNz79yHAn6eyQhw1O-RVnyj6cDpudkTnpJmtubeUZ3U-aZzP9xDZ-QQVvcppO3kTuaWg1z8QBWvmLFQRL-zVuJAKymr.jpg?r=0e3",
+              "timing": "65min",
+              "preview": "queens-gambit/2.jpg",
               "video": [
                 {
-                  "url": "http://localhost:4300/assets/movie.ogv",
-                  "type": "video/ogg",
+                  "url": "queens-gambit/queens-gambit.mp4",
+                  "type": "video/mp4",
                   "size": "720"
                 }
               ],
@@ -103,16 +108,16 @@
             {
               "id": 5,
               "name": "Doubled Pawns",
-              "timing": "58 min",
-              "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQVbsz79M2Z9CWcQSJHCsm-giqZHvLoOaxsDsKbg-iULqa3iygNtBSsuDYk-9b03WPSUNgU6jbJka3j2w4T0IxRcAdl3WNrXvThL10husx9KJMyH.jpg?r=1bc",
+              "timing": "58min",
+              "preview": "queens-gambit/3.jpg",
               "video": [
                 {
-                  "url": "https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4",
+                  "url": "queens-gambit/queens-gambit.mp4",
                   "type": "video/mp4",
                   "size": "1080"
                 },
                 {
-                  "url": "https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4",
+                  "url": "queens-gambit/queens-gambit2.mp4",
                   "type": "video/mp4",
                   "size": "720"
                 }
@@ -122,11 +127,11 @@
             {
               "id": 6,
               "name": "Middle Game",
-              "timing": "61 min",
-              "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABeHUH8Y__Yg-vwwoYlc1o4PscsFCMHliKK5INHnPAlhSA-IMfSwt0L3GzAI6hG9mCgy8qwnrn2gC1EJwGiUyqVObs4p1tSjFUBXnLZhF-G_OuU4j.jpg?r=83b",
+              "timing": "61min",
+              "preview": "queens-gambit/4.jpg",
               "video": [
                 {
-                  "url": "https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4",
+                  "url": "queens-gambit/queens-gambit.mp4",
                   "type": "video/mp4",
                   "size": "720"
                 }
@@ -136,11 +141,39 @@
             {
               "id": 7,
               "name": "Fork",
-              "timing": "60 min",
-              "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWPkFJCl4YMxSUiDe9V4LnRS9aWiz43bv34MI3E_d_7y-kUg0plAjZVUbbyBYEkllt8vBLQaC13bOZeB4_IR4QEioSejqFAQuHNtIhK2a6Ki9603.jpg?r=f5c",
+              "timing": "60min",
+              "preview": "queens-gambit/5.jpg",
               "video": [
                 {
-                  "url": "http://localhost:4300/assets/queen-gambit.mp4",
+                  "url": "queens-gambit/queens-gambit.mp4",
+                  "type": "video/mp4",
+                  "size": "720"
+                }
+              ],
+              "seasonId": 1
+            },
+            {
+              "id": 8,
+              "name": "Adjournment",
+              "timing": "61min",
+              "preview": "queens-gambit/6.jpg",
+              "video": [
+                {
+                  "url": "queens-gambit/queens-gambit.mp4",
+                  "type": "video/mp4",
+                  "size": "720"
+                }
+              ],
+              "seasonId": 1
+            },
+            {
+              "id": 9,
+              "name": "End Game",
+              "timing": "59min",
+              "preview": "queens-gambit/7.jpg",
+              "video": [
+                {
+                  "url": "queens-gambit/queens-gambit.mp4",
                   "type": "video/mp4",
                   "size": "720"
                 }
@@ -148,143 +181,166 @@
               "seasonId": 1
             }
           ]
-        },
-        {
-          "id": 2,
-          "name": "Season 2",
-          "episodes": [
-            {
-              "id": 8,
-              "name": "Doubled Pawns",
-              "timing": "58 min",
-              "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQVbsz79M2Z9CWcQSJHCsm-giqZHvLoOaxsDsKbg-iULqa3iygNtBSsuDYk-9b03WPSUNgU6jbJka3j2w4T0IxRcAdl3WNrXvThL10husx9KJMyH.jpg?r=1bc",
-              "video": [
-                {
-                  "url": "http://localhost:4300/assets/queen-gambit.mp4",
-                  "type": "video/mp4",
-                  "size": "720"
-                }
-              ],
-              "seasonId": 2
-            },
-            {
-              "id": 9,
-              "name": "Middle Game",
-              "timing": "61 min",
-              "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABeHUH8Y__Yg-vwwoYlc1o4PscsFCMHliKK5INHnPAlhSA-IMfSwt0L3GzAI6hG9mCgy8qwnrn2gC1EJwGiUyqVObs4p1tSjFUBXnLZhF-G_OuU4j.jpg?r=83b",
-              "video": [
-                {
-                  "url": "http://localhost:4300/assets/queen-gambit.mp4",
-                  "type": "video/mp4",
-                  "size": "720"
-                }
-              ],
-              "seasonId": 2
-            },
-            {
-              "id": 10,
-              "name": "Fork",
-              "timing": "60 min",
-              "preview": "https://occ-0-38-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWPkFJCl4YMxSUiDe9V4LnRS9aWiz43bv34MI3E_d_7y-kUg0plAjZVUbbyBYEkllt8vBLQaC13bOZeB4_IR4QEioSejqFAQuHNtIhK2a6Ki9603.jpg?r=f5c",
-              "video": [
-                {
-                  "url": "http://localhost:4300/assets/queen-gambit.mp4",
-                  "type": "video/mp4",
-                  "size": "720"
-                }
-              ],
-              "seasonId": 2
-            }
-          ]
         }
       ]
     },
     {
-      "id": 2,
-      "slug": "big-buck-bunny",
-      "name": "Big Buck Bunny",
-      "type": "movie",
-      "preview": "http://localhost:4300/assets/big-buck-bunny.png",
-      "year": 2011,
-      "rating": {
-        "count": 8.1,
-        "views": 834
-      },
-      "categoryId": 5,
-      "ageLimit": "6+",
-      "trailers": [
-        {
-          "id": 11,
-          "name": "Trailer for Big Buck Bunny",
-          "timing": "2min",
-          "video": [
-            {
-              "url": "http://localhost:4300/assets/movie.ogv",
-              "type": "video/ogg",
-              "size": "720"
-            }
-          ],
-          "preview": "http://localhost:4300/assets/big-buck-bunny.png",
-          "filmId": 2
-        }
-      ],
-      "details": {
-        "createdBy": [
-          "Sacha Goedegebure",
-          "Ton Roosendaal"
-        ],
-        "musicBy": [
-          "Jan Morgenstern"
-        ]
-      },
-      "shortDesc": "is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender.",
-      "desc": "is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation.[5][6] Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.",
-      "episode": {
-        "id": 11,
-        "name": "Big Buck Bunny",
-        "timing": "10min",
-        "video": [
-          {
-            "url": "http://localhost:4300/assets/movie.ogv",
-            "type": "video/ogg",
-            "size": "720"
-          }
-        ],
-        "preview": "http://localhost:4300/assets/big-buck-bunny.png",
-        "filmId": 2
-      }
-    },
-    {
       "id": 3,
-      "slug": "Money Heist",
-      "name": "money-heist",
+      "slug": "money-heist",
+      "name": "Money Heist",
       "type": "series",
-      "preview": "http://localhost:4300/assets/1.jpg",
+      "preview": "money-heist/money-heist-poster.jpg",
       "rating": {
         "count": 6.1,
         "views": 2500
       },
       "year": 2017,
       "ageLimit": "18+",
-      "desc": "is a Spanish heist crime drama television series created by Álex Pina. The series traces two long-prepared heists led by the Professor (Álvaro Morte), one on the Royal Mint of Spain, and one on the Bank of Spain, told from the perspective of one of the robbers, Tokyo (Úrsula Corberó). The narrative is told in a real-time-like fashion and relies on flashbacks, time-jumps, hidden character motivations, and an unreliable narrator for complexity.",
+      "shortDesc": "An unusual group of robbers attempt to carry out the most perfect robbery in Spanish history - stealing 2.4 billion euros from the Royal Mint of Spain.",
+      "desc": "To carry out the biggest heist in history, a mysterious man called The Professor recruits a band of eight robbers who have a single characteristic: none of them has anything to lose. Five months of seclusion memorizing every step, every detail, every probability culminate in eleven days locked up in the National Coinage and Stamp Factory of Spain, surrounded by police forces and with dozens of hostages in their power, to find out whether their suicide wager will lead to everything or nothing.",
       "categoryId": 6,
+      "details": {
+        "createdBy": [
+          "Álex Pina"
+        ],
+        "starring": [
+          "Álvaro Morte",
+          "Úrsula Corberó",
+          "Jaime Lorente",
+          "Miguel Herrán",
+          "Itziar Ituño"
+        ]
+      },
       "seasons": [
         {
           "id": 3,
-          "name": "Part 1",
+          "name": "Season 1",
           "episodes": [
             {
-              "id": 12,
-              "name": "Bella ciao",
+              "id": 20,
+              "name": "Efectuar lo acordado",
+              "timing": "47min",
+              "video": [
+                {
+                  "url": "money-heist/money-heist.mp4",
+                  "type": "video/mp4",
+                  "size": "1080"
+                }
+              ],
+              "preview": "money-heist/1.jpg",
+              "seasonId": 3
+            },
+            {
+              "id": 21,
+              "name": "Efectuar lo acordado",
+              "timing": "51min",
+              "video": [
+                {
+                  "url": "money-heist/money-heist.mp4",
+                  "type": "video/mp4",
+                  "size": "1080"
+                }
+              ],
+              "preview": "money-heist/2.jpg",
+              "seasonId": 3
+            },
+            {
+              "id": 22,
+              "name": "Errar al disparar",
+              "timing": "51min",
+              "video": [
+                {
+                  "url": "money-heist/money-heist.mp4",
+                  "type": "video/mp4",
+                  "size": "1080"
+                }
+              ],
+              "preview": "money-heist/3.jpg",
+              "seasonId": 3
+            },
+            {
+              "id": 23,
+              "name": "Caballo de Troya",
               "timing": "52min",
               "video": [
                 {
-                  "url": "http://localhost:4300/assets/queen-gambit.mp4",
+                  "url": "money-heist/money-heist.mp4",
                   "type": "video/mp4",
-                  "size": "720"
+                  "size": "1080"
                 }
               ],
-              "preview": "http://localhost:4300/assets/1.jpg"
+              "preview": "money-heist/4.jpg",
+              "seasonId": 3
+            },
+            {
+              "id": 24,
+              "name": "El día de la marmota",
+              "timing": "46min",
+              "video": [
+                {
+                  "url": "money-heist/money-heist.mp4",
+                  "type": "video/mp4",
+                  "size": "1080"
+                }
+              ],
+              "preview": "money-heist/5.jpg",
+              "seasonId": 3
+            },
+            {
+              "id": 25,
+              "name": "La cálida Guerra Fría",
+              "timing": "50min",
+              "video": [
+                {
+                  "url": "money-heist/money-heist.mp4",
+                  "type": "video/mp4",
+                  "size": "1080"
+                }
+              ],
+              "preview": "money-heist/6.jpg",
+              "seasonId": 3
+            },
+            {
+              "id": 26,
+              "name": "Refrigerada inestabilidad",
+              "timing": "49min",
+              "video": [
+                {
+                  "url": "money-heist/money-heist.mp4",
+                  "type": "video/mp4",
+                  "size": "1080"
+                }
+              ],
+              "preview": "money-heist/7.jpg",
+              "seasonId": 3
+            },
+            {
+              "id": 27,
+              "name": "Tú lo has buscado",
+              "timing": "52min",
+              "video": [
+                {
+                  "url": "money-heist/money-heist.mp4",
+                  "type": "video/mp4",
+                  "size": "1080"
+                }
+              ],
+              "preview": "money-heist/8.jpg",
+              "seasonId": 3
+            },
+            {
+              "id": 28,
+              "name": "El que la sigue la consigue",
+              "timing": "55min",
+              "video": [
+                {
+                  "url": "money-heist/money-heist.mp4",
+                  "type": "video/mp4",
+                  "size": "1080"
+                }
+              ],
+              "preview": "money-heist/9.jpg",
+              "seasonId": 3
             }
           ]
         }
@@ -292,34 +348,141 @@
     },
     {
       "id": 4,
-      "name": "Sherlock Holms",
+      "name": "Sherlock",
       "slug": "sherlock",
       "type": "series",
-      "preview": "http://localhost:4300/assets/sherlock.jpg",
+      "preview": "sherlock/sherlock-poster.jpg",
       "rating": {
-        "count": 5.1,
+        "count": 7.2,
         "views": 3200
       },
-      "year": 2016,
-      "ageLimit": "16+",
+      "year": 2010,
+      "ageLimit": "18+",
       "categoryId": 7,
+      "shortDesc": "A modern update finds the famous sleuth and his doctor partner solving crime in 21st century London.",
+      "desc": "In this updated take on Sir Arthur Conan Doyle's beloved mystery tales, the eccentric sleuth prowls the streets of modern London in search of clues.",
+      "details": {
+        "createdBy": [
+          "Steven Moffat",
+          "Mark Gatiss"
+        ],
+        "starring": [
+          "Benedict Cumberbatch",
+          "Martin Freeman",
+          "Una Stubbs",
+          "Rupert Graves",
+          "Louise Brealey"
+        ]
+      },
+      "trailers": [
+        {
+          "id": 35,
+          "name": "Trailer",
+          "timing": "2min",
+          "video": [
+            {
+              "url": "sherlock/sherlock.mp4",
+              "type": "video/mp4",
+              "size": "720"
+            }
+          ],
+          "preview": "sherlock/6.jpg"
+        }
+      ],
       "seasons": [
         {
-          "id": 1,
+          "id": 4,
           "name": "Season 1",
           "episodes": [
             {
-              "id": 13,
-              "name": "The Final Problem",
-              "timing": "72min",
+              "id": 29,
+              "name": "A Study in Pink",
+              "timing": "88min",
               "video": [
                 {
-                  "url": "http://localhost:4300/assets/queen-gambit.mp4",
+                  "url": "sherlock/sherlock.mp4",
                   "type": "video/mp4",
                   "size": "720"
                 }
               ],
-              "preview": "http://localhost:4300/assets/sherlock.jpg"
+              "preview": "sherlock/1.jpg",
+              "seasonId": 4
+            },
+            {
+              "id": 30,
+              "name": "The Blind Banker",
+              "timing": "89min",
+              "video": [
+                {
+                  "url": "sherlock/sherlock.mp4",
+                  "type": "video/mp4",
+                  "size": "720"
+                }
+              ],
+              "preview": "sherlock/2.jpg",
+              "seasonId": 4
+            },
+            {
+              "id": 31,
+              "name": "The Great Game",
+              "timing": "90min",
+              "video": [
+                {
+                  "url": "sherlock/sherlock.mp4",
+                  "type": "video/mp4",
+                  "size": "720"
+                }
+              ],
+              "preview": "sherlock/3.jpg",
+              "seasonId": 4
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Season 2",
+          "episodes": [
+            {
+              "id": 32,
+              "name": "A Scandal in Belgravia",
+              "timing": "90min",
+              "video": [
+                {
+                  "url": "sherlock/sherlock.mp4",
+                  "type": "video/mp4",
+                  "size": "720"
+                }
+              ],
+              "preview": "sherlock/4.jpg",
+              "seasonId": 5
+            },
+            {
+              "id": 33,
+              "name": "The Hounds of Baskerville",
+              "timing": "88min",
+              "video": [
+                {
+                  "url": "sherlock/sherlock.mp4",
+                  "type": "video/mp4",
+                  "size": "720"
+                }
+              ],
+              "preview": "sherlock/5.jpg",
+              "seasonId": 5
+            },
+            {
+              "id": 34,
+              "name": "The Reichenbach Fall",
+              "timing": "88min",
+              "video": [
+                {
+                  "url": "sherlock/sherlock.mp4",
+                  "type": "video/mp4",
+                  "size": "720"
+                }
+              ],
+              "preview": "sherlock/6.jpg",
+              "seasonId": 5
             }
           ]
         }
@@ -330,242 +493,211 @@
       "slug": "the-avengers",
       "name": "The Avengers",
       "type": "movie",
-      "preview": "http://localhost:4300/assets/avengers.jpg",
+      "preview": "avengers-poster.jpg",
       "rating": {
-        "count": 2,
+        "count": 2.0,
         "views": 1340
       },
       "categoryId": 3,
       "year": 2012,
       "ageLimit": "12+",
+      "shortDesc": "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
+      "desc": "Loki, the adopted brother of Thor, teams-up with the Chitauri Army and uses the Tesseract's power to travel from Asgard to Midgard to plot the invasion of Earth and become a king. The director of the agency S.H.I.E.L.D., Nick Fury, sets in motion project Avengers, joining Tony Stark a.k.a. the Iron Man; Steve Rogers, a.k.a. Captain America; Bruce Banner, a.k.a. The Hulk; Thor; Natasha Romanoff, a.k.a. Black Widow; and Clint Barton, a.k.a. Hawkeye, to save the world from the powerful Loki and the alien invasion.",
+      "details": {
+        "createdBy": [
+          "Joss Whedon",
+          "Zak Penn"
+        ],
+        "starring": [
+          "Robert Downey Jr.",
+          "Chris Evans",
+          "Scarlett Johansson",
+          "Jeremy Renner",
+          "Mark Ruffalo",
+          "Chris Hemsworth",
+          "Tom Hiddleston"
+        ]
+      },
+      "trailers": [
+        {
+          "id": 36,
+          "name": "The avengers",
+          "timing": "2min",
+          "video": [
+            {
+              "url": "avengers.mp4",
+              "type": "video/mp4",
+              "size": "720"
+            }
+          ],
+          "preview": "avengers-poster.jpg"
+        }
+      ],
       "episode": {
         "id": 14,
         "name": "The avengers",
-        "timing": "2h 12min",
+        "timing": "2h 23min",
         "video": [
           {
-            "url": "http://localhost:4300/assets/ ",
-            "type": "video/ogg",
+            "url": "avengers.mp4",
+            "type": "video/mp4",
             "size": "720"
           }
         ],
-        "preview": "http://localhost:4300/assets/avengers.jpg"
+        "preview": "avengers-poster.jpg"
       }
     },
     {
       "id": 6,
-      "slug": "the-avengers",
-      "name": "The Avengers",
+      "slug": "avatar",
+      "name": "Avatar",
       "type": "movie",
-      "preview": "http://localhost:4300/assets/avengers.jpg",
+      "preview": "avatar-poster.jpeg",
       "rating": {
-        "count": 2,
-        "views": 1340
+        "count": 8.1,
+        "views": 10430
       },
-      "categoryId": 3,
-      "year": 2012,
+      "categoryId": 4,
+      "year": 2009,
       "ageLimit": "12+",
+      "shortDesc": "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+      "desc": "When his brother is killed in a robbery, paraplegic Marine Jake Sully decides to take his place in a mission on the distant world of Pandora. There he learns of greedy corporate figurehead Parker Selfridge's intentions of driving off the native humanoid \"Na'vi\" in order to mine for the precious material scattered throughout their rich woodland.",
+      "details": {
+        "createdBy": [
+          "James Cameron"
+        ],
+        "starring": [
+          "Sam Worthington",
+          "Zoe Saldana",
+          "Sigourney Weaver",
+          "Stephen Lang"
+        ]
+      },
+      "trailers": [
+        {
+          "id": 15,
+          "name": "Trailer",
+          "timing": "2.42 min",
+          "video": [
+            {
+              "url": "avatar.mp4",
+              "type": "video/mp4",
+              "size": "720"
+            }
+          ],
+          "preview": "avatar-poster.jpeg"
+        }
+      ],
       "episode": {
-        "id": 14,
-        "name": "The avengers",
-        "timing": "2h 12min",
+        "id": 16,
+        "name": "Avatar",
+        "timing": "2h 42min",
         "video": [
           {
-            "url": "http://localhost:4300/assets/ ",
-            "type": "video/ogg",
+            "url": "avatar.mp4",
+            "type": "video/mp4",
             "size": "720"
           }
         ],
-        "preview": "http://localhost:4300/assets/avengers.jpg"
+        "preview": "avatar-poster.jpeg"
       }
     },
     {
       "id": 7,
-      "slug": "the-avengers",
-      "name": "The Avengers",
+      "slug": "shang-chi",
+      "name": "Shang-Chi and the Legend of the Ten Rings",
       "type": "movie",
-      "preview": "http://localhost:4300/assets/avengers.jpg",
+      "preview": "shang-poster.jpg",
       "rating": {
-        "count": 2,
-        "views": 1340
+        "count": 7.5,
+        "views": 7390
       },
-      "categoryId": 3,
-      "year": 2012,
-      "ageLimit": "12+",
+      "categoryId": 4,
+      "year": 2021,
+      "ageLimit": "16+",
+      "shortDesc": "Shang-Chi, the master of weaponry-based Kung Fu, is forced to confront his past after being drawn into the Ten Rings organization.",
+      "desc": "Shang-Chi, the master of weaponry-based Kung Fu, is forced to confront his past after being drawn into the Ten Rings organization.",
+      "details": {
+        "starring": [
+          "Simu Liu",
+          "Awkwafina",
+          "Tony Leung",
+          "Michelle Yeoh",
+          "Fala Chen",
+          "Meng’er Zhang"
+        ],
+        "createdBy": [
+          "David Callaham",
+          "Destin Daniel Cretton",
+          "Andrew Lanham"
+        ]
+      },
+      "trailers": [
+        {
+          "id": 17,
+          "name": "Trailer 1",
+          "timing": "3min",
+          "video": [
+            {
+              "url": "shang-chi.mp4",
+              "type": "video/mp4",
+              "size": "720"
+            }
+          ],
+          "preview": "shang-poster.jpg"
+        }
+      ],
       "episode": {
-        "id": 14,
-        "name": "The avengers",
+        "id": 18,
+        "name": "Shang-Chi",
         "timing": "2h 12min",
         "video": [
           {
-            "url": "http://localhost:4300/assets/ ",
-            "type": "video/ogg",
+            "url": "shang-chi.mp4",
+            "type": "video/mp4",
             "size": "720"
           }
         ],
-        "preview": "http://localhost:4300/assets/avengers.jpg"
+        "preview": "shang-poster.jpg"
       }
     },
     {
       "id": 8,
-      "slug": "the-avengers",
-      "name": "The Avengers",
+      "slug": "spiderman-no-way-to-home",
+      "name": "Spider-Man: No Way Home",
       "type": "movie",
-      "preview": "http://localhost:4300/assets/avengers.jpg",
+      "preview": "spiderman-poster.jpeg",
       "rating": {
-        "count": 2,
-        "views": 1340
+        "count": 9.2,
+        "views": 3020
       },
       "categoryId": 3,
-      "year": 2012,
+      "year": 2021,
       "ageLimit": "12+",
-      "episode": {
-        "id": 14,
-        "name": "The avengers",
-        "timing": "2h 12min",
-        "video": [
-          {
-            "url": "http://localhost:4300/assets/ ",
-            "type": "video/ogg",
-            "size": "720"
-          }
+      "shortDesc": "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.",
+      "desc": "Peter Parker's secret identity is revealed to the entire world. Desperate for help, Peter turns to Doctor Strange to make the world forget that he is Spider-Man. The spell goes horribly wrong and shatters the multiverse, bringing in monstrous villains that could destroy the world.",
+      "details": {
+        "createdBy": [
+          "Jon Watts"
         ],
-        "preview": "http://localhost:4300/assets/avengers.jpg"
-      }
-    },
-    {
-      "id": 9,
-      "slug": "the-avengers",
-      "name": "The Avengers",
-      "type": "movie",
-      "preview": "http://localhost:4300/assets/avengers.jpg",
-      "rating": {
-        "count": 2,
-        "views": 1340
+        "starring": [
+          "Tom Holland",
+          "Zendaya",
+          "Benedict Cumberbatch"
+        ]
       },
-      "categoryId": 3,
-      "year": 2012,
-      "ageLimit": "12+",
       "episode": {
-        "id": 14,
-        "name": "The avengers",
-        "timing": "2h 12min",
+        "id": 19,
+        "name": "Spider-Man: No Way Home",
+        "timing": "2h 23min",
         "video": [
           {
-            "url": "http://localhost:4300/assets/ ",
-            "type": "video/ogg",
-            "size": "720"
+            "url": "spiderman-noway-to-home.mp4",
+            "type": "video/mp4",
+            "size": "1080"
           }
         ],
-        "preview": "http://localhost:4300/assets/avengers.jpg"
-      }
-    },
-    {
-      "id": 10,
-      "slug": "the-avengers",
-      "name": "The Avengers",
-      "type": "movie",
-      "preview": "http://localhost:4300/assets/avengers.jpg",
-      "rating": {
-        "count": 2,
-        "views": 1340
-      },
-      "categoryId": 3,
-      "year": 2012,
-      "ageLimit": "12+",
-      "episode": {
-        "id": 14,
-        "name": "The avengers",
-        "timing": "2h 12min",
-        "video": [
-          {
-            "url": "http://localhost:4300/assets/ ",
-            "type": "video/ogg",
-            "size": "720"
-          }
-        ],
-        "preview": "http://localhost:4300/assets/avengers.jpg"
-      }
-    },
-    {
-      "id": 11,
-      "slug": "the-avengers",
-      "name": "The Avengers",
-      "type": "movie",
-      "preview": "http://localhost:4300/assets/avengers.jpg",
-      "rating": {
-        "count": 2,
-        "views": 1340
-      },
-      "categoryId": 3,
-      "year": 2012,
-      "ageLimit": "12+",
-      "episode": {
-        "id": 14,
-        "name": "The avengers",
-        "timing": "2h 12min",
-        "video": [
-          {
-            "url": "http://localhost:4300/assets/ ",
-            "type": "video/ogg",
-            "size": "720"
-          }
-        ],
-        "preview": "http://localhost:4300/assets/avengers.jpg"
-      }
-    },
-    {
-      "id": 12,
-      "slug": "the-avengers",
-      "name": "The Avengers",
-      "type": "movie",
-      "preview": "http://localhost:4300/assets/avengers.jpg",
-      "rating": {
-        "count": 2,
-        "views": 1340
-      },
-      "categoryId": 3,
-      "year": 2012,
-      "ageLimit": "12+",
-      "episode": {
-        "id": 14,
-        "name": "The avengers",
-        "timing": "2h 12min",
-        "video": [
-          {
-            "url": "http://localhost:4300/assets/ ",
-            "type": "video/ogg",
-            "size": "720"
-          }
-        ],
-        "preview": "http://localhost:4300/assets/avengers.jpg"
-      }
-    },
-    {
-      "id": 13,
-      "slug": "the-avengers",
-      "name": "The Avengers",
-      "type": "movie",
-      "preview": "http://localhost:4300/assets/avengers.jpg",
-      "rating": {
-        "count": 2,
-        "views": 1340
-      },
-      "categoryId": 3,
-      "year": 2012,
-      "ageLimit": "12+",
-      "episode": {
-        "id": 14,
-        "name": "The avengers",
-        "timing": "2h 12min",
-        "video": [
-          {
-            "url": "http://localhost:4300/assets/ ",
-            "type": "video/ogg",
-            "size": "720"
-          }
-        ],
-        "preview": "http://localhost:4300/assets/avengers.jpg"
+        "preview": "spiderman-poster.jpeg"
       }
     }
   ],
@@ -644,9 +776,9 @@
       "password": "admin"
     },
     {
-      "email": "max@gmail.com",
-      "password": "admin",
-      "fullName": "maxim",
+      "email": "daniel@gmail.com",
+      "password": "daniel",
+      "fullName": "Daniel",
       "id": 7
     }
   ],
@@ -722,6 +854,22 @@
       "title": "et omnis dolorem",
       "rating": 8,
       "body": "ut voluptatem corrupti velit\nad voluptatem maiores\net nisi velit vero accusamus maiores\nvoluptates quia aliquid ullam eaque"
+    },
+    {
+      "title": "New comment",
+      "fullName": "maxim",
+      "body": "body message\n",
+      "userId": 7,
+      "filmId": 1,
+      "id": 9
+    },
+    {
+      "title": "new comment",
+      "fullName": "maxim",
+      "body": "comment message for test, then will be delete\\\n",
+      "userId": 7,
+      "filmId": 1,
+      "id": 10
     }
   ]
 }

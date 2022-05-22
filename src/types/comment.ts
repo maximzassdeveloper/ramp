@@ -7,6 +7,6 @@ export interface IComment {
   title: string
   fullName: string
   body: string
-  rating: number
+  rating?: number
   user?: IUser
 }

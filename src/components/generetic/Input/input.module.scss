@@ -28,6 +28,13 @@
       }
     }
   }
+  &.disabled {
+    input {
+      background: $disabled-bg;
+      color: $grey;
+      cursor: not-allowed;
+    }
+  }
   &.inputError {
     padding-bottom: 25px;
     .error {

@@ -46,6 +46,8 @@ export const Player: FC<VideoProps> = ({ sources }) => {
     }
   }
 
+
+  // set source video on select quality in settings
   function setSource(source: IVideoSource) {
     const isCanPlay = checkCanPlay(source.type)
     if (isCanPlay) {
@@ -59,6 +61,7 @@ export const Player: FC<VideoProps> = ({ sources }) => {
     if (!video.current) return
 
     video.current.volume = 0
+    video.current.currentTime = 0
 
     changePlay(true)
   }
@@ -66,6 +69,11 @@ export const Player: FC<VideoProps> = ({ sources }) => {
   const onDurationChange = (e: any) => {
     setDuration(Math.floor(e.target.duration ?? 0))
   }
+
+  useEffect(() => {
+    if (!video.current) return
+    video.current.currentTime = 0
+  }, [sources])
 
   
   const inactionCallback = useCallback(() => {

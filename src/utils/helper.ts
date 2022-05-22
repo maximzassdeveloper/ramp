@@ -1,3 +1,5 @@
+export const fileUrl = (name: string) => `${process.env.FILE_URL || ''}${name}`
+
 export const ObjectIsEmpty = (obj: Object) => {
   if (Object.keys(obj).length == 0) {
     return true

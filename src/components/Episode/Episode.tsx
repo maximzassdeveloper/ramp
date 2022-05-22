@@ -2,6 +2,7 @@ import { FC, useMemo } from 'react'
 import { useActions } from '@/hooks/useActions'
 import { IEpisode, IFilm } from '@/types/film'
 import { combineStyles } from '@/utils/combineStyles'
+import { fileUrl } from '@/utils/helper'
 import cn from 'classnames'
 import styles from './episode.module.scss'
 
@@ -25,7 +26,7 @@ export const Episode: FC<EpisodeProps> = ({ episode, count, film, className, cla
   return <>
     <div className={cn(s.episode, className)}>
       <div className={s.image} onClick={onClick}>
-        <img src={episode.preview} alt={episode.name} />
+        <img src={fileUrl(episode.preview)} alt={episode.name} />
       </div>
       <div className={s.content}>
         <span className={s.count}>{count}</span>

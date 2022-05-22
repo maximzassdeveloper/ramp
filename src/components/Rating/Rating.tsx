@@ -8,9 +8,10 @@ import s from './rating.module.scss'
 interface RatingProps {
   rating?: IRating
   ratingNumber?: number
+  className?: string
 }
 
-export const Rating: FC<RatingProps> = ({ rating, ratingNumber }) => {
+export const Rating: FC<RatingProps> = ({ rating, ratingNumber, className }) => {
 
   const color = useMemo(() => {
     let count = rating?.count ?? ratingNumber
@@ -24,10 +25,10 @@ export const Rating: FC<RatingProps> = ({ rating, ratingNumber }) => {
   }, [rating?.count, ratingNumber])
 
   return (
-    <div className={s.rating}>
+    <div className={classNames(s.rating, className)}>
 
       <span className={classNames(s.count, s[color], { [s.ratingNumber]: ratingNumber !== undefined })}>
-        {rating?.count ?? ratingNumber}
+        {(rating?.count ?? ratingNumber)?.toFixed(1)}
       </span>
 
       {rating?.views && <span className={s.views}>{convertViews(rating.views)}</span>}

@@ -1,0 +1,214 @@
+.filmScreen {
+  position: relative;
+  height: 100vh;
+  padding: 120px 70px 70px 90px;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+  z-index: 1;
+  &:before, &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(#000, .8) 20%, transparent 80%);
+    z-index: -1;
+    transition: .2s;
+  }
+  &:after {
+    background: rgba(#000, .7);
+    opacity: 0;
+  }
+
+  &Episodes {
+    &:before {
+      opacity: 0;
+    }
+    .seasonsWrapper {
+      width: calc(100% - 90px);
+      bottom: 160px;
+    }
+    .play {
+      height: 53px;
+      width: 53px;
+      bottom: 20px;
+      left: -27px;
+      i {
+        font-size: 26px;
+      }
+    }
+    .seasons {
+      padding-left: 70px;
+    }
+  }
+
+  &Details {
+    .seasonsWrapper {
+      width: 0;
+      right: -100px;
+    }
+  }
+
+  &Episodes, &Details {
+    .title {
+      font-size: 30px;
+      max-width: 260px;
+      &Wrapper {
+        margin-top: 0px;
+      }
+    }
+    &:after {
+      opacity: 1 !important;
+    }
+  }
+}
+
+.screenFadingBlock {
+  position: relative;
+  & > * {
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.title {
+  max-width: 500px;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.1em;
+  transition: .3s;
+  &Wrapper {
+    position: relative;
+    margin-bottom: 30px;
+    transition: .3s;
+  }
+}
+
+.desc {
+  max-width: 530px;
+  font-size: 18px;
+  line-height: 1.5em;
+}
+
+.shortDesc {
+  max-width: 320px;
+  font-size: 16px;
+  line-height: 1.4em;
+  margin-bottom: 20px;
+  color: $grey;
+}
+
+.ageLimit {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1em;
+  border: 1px solid #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.seasonsWrapper {
+  position: absolute;
+  width: 700px;
+  height: 330px;
+  right: 0;
+  bottom: 70px;
+  transition: .3s ease-in-out;
+}
+
+.buttons {
+  display: flex;
+  margin-top: 30px;
+  & > * {
+    margin-right: 10px;
+  }
+}
+
+// Navigation
+.nav {
+  position: absolute;
+  bottom: 70px;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  &Underline {
+    height: 5px;
+    position: absolute;
+    background: $accent;
+    bottom: 2px;
+    transition: .2s;
+    z-index: -1;
+  }
+  &Item {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 45px;
+    line-height: 1.4em;
+    cursor: pointer;
+  }
+}
+
+// Details
+.trailers {
+  margin-left: 90px;
+  h4 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .episode {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.options {
+  margin-bottom: 30px;
+  > * {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 20px;
+  }
+}
+
+.info {
+  max-width: 500px;
+}
+
+.about {
+  position: absolute;
+  display: flex;
+  right: 0;
+  top: -30px;
+  .line {
+    display: flex;
+    .col {
+      margin-right: 40px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .col {
+    flex: 1;
+  }
+  &Block {
+    margin-bottom: 25px;
+    h4 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    li {
+      font-size: 14px;
+      margin-bottom: 6px;
+      font-weight: 400;
+    }
+  }
+}

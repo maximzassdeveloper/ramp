@@ -4,6 +4,7 @@ export { Checkbox } from './Checkbox/Checkbox'
 export { default as Slider } from './Slider'
 export { Title } from './Title/Title'
 export { RatingStars } from './RatingStars/RatingStars'
+export { Textarea } from './Textarea/Textarea'
 
 export { ToggleIcon } from './ui/ToggleIcon'
 export { CloseIcon } from './ui/CloseIcon'

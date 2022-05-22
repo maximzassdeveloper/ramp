@@ -37,10 +37,15 @@
   display: flex;
 }
 .title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1em;
   margin-bottom: 5px;
+
+  overflow: hidden;
+  white-space: nowrap;
+  width: 200px;
+  text-overflow: ellipsis;
 }
 .timing {
   font-size: 16px;

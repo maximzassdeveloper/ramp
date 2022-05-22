@@ -3,5 +3,4 @@ build
 dist
 *.env
 __mocks__
-public/assets/*
 uploads

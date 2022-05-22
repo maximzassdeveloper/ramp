@@ -14,12 +14,16 @@ export const PlayButton: FC<PlayButtonProps> = memo(({ center }) => {
   const [hidden, setHidden] = useState(false)
   const timeout = useRef<any>(null)
 
-  useEffect(() => {
+  const fadingButtonInaction = () => {
     if (!center) return
 
     setHidden(false)
     if (timeout.current) clearTimeout(timeout.current)
     timeout.current = setTimeout(() => setHidden(true), 2000)
+  }
+
+  useEffect(() => {
+    fadingButtonInaction()
   }, [isPlay, center])
 
 

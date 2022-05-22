@@ -20,10 +20,17 @@ export const Search: FC = memo(() => {
     triggerLoadMore,
     hasNextPage,
 
+    refetch,
     data, 
     isLoading, 
     error, 
   } = useSearch()
+
+  useEffect(() => {
+    if (isOpen) {
+      refetch()
+    }
+  }, [isOpen])
 
   useEffect(() => {
     triggerLoadMore()

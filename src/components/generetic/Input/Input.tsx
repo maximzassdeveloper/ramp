@@ -1,6 +1,6 @@
 import { forwardRef, ReactNode, InputHTMLAttributes } from 'react'
-import classNames from 'classnames'
 import { FieldError } from 'react-hook-form'
+import classNames from 'classnames'
 import s from './input.module.scss'
 
 export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'defaultValue'> {
@@ -16,11 +16,16 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(( props, ref ) => {
 
-  const { className, value, label, type = 'text', error, autoComplete = 'off', addonAfter, addonBefore, ...rest } = props
+  const { className, value, label, disabled, type = 'text', error, autoComplete = 'off', addonAfter, addonBefore, ...rest } = props
   const LabelTag = label ? 'label' : 'div'
 
+  const classes = classNames([s.input], className, { 
+    [s.inputError]: error?.message,
+    [s.disabled]: disabled
+  })
+
   return (
-    <div className={classNames([s.input], className, { [s.inputError]: error?.message })}>
+    <div className={classes}>
       {addonBefore}
       <LabelTag>
         {label && <span className={s.label}>{label}</span>} 
@@ -29,6 +34,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(( props, ref ) => 
           type={type}
           autoComplete={autoComplete}
           value={value}
+          disabled={disabled}
           {...rest}
         />
       </LabelTag>

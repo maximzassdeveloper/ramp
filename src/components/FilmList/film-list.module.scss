@@ -1,5 +1,17 @@
 .list {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  & > * {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.filmsWithTitle {
+  margin-bottom: 20px;
+  h2 {
+    margin-bottom: 18px;
+  }
 }

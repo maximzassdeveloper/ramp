@@ -18,8 +18,6 @@ export const loadThumbs = (video: HTMLVideoElement, duration: number) => {
 
   document.body.appendChild(video)
 
-  let testTime = new Date()
-
   video.addEventListener('loadeddata', async () => {
     let count = 1
     let id = 1
@@ -94,8 +92,6 @@ export const loadThumbs = (video: HTMLVideoElement, duration: number) => {
       // deleting unused property
       delete thumb.canvas
     })
-    console.log(((new Date).getSeconds() - testTime.getSeconds()))
-
   })
 
   setTimeout(() => document.body.removeChild(video))

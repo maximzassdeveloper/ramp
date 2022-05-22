@@ -7,10 +7,10 @@ import { IFetchedData, IFilter, IParams } from './searchTypes'
 export const useSearch = () => {
   const inputValueRef = useRef('')
   const filterRef = useRef({} as IFilter)
-  const [params, setParams] = useState({} as IParams)
+  const [params, setParams] = useState<IParams>(createParams(inputValueRef.current, filterRef.current))
 
 
-  const { data, isLoading, error, fetchNextPage, hasNextPage } = useInfiniteQuery<IFetchedData>(
+  const { data, isLoading, error, fetchNextPage, hasNextPage, refetch } = useInfiniteQuery<IFetchedData>(
     ['search films', params],
     ({ pageParam = 1 }) => fetchSearchFilms(params, pageParam),
     {
@@ -22,7 +22,6 @@ export const useSearch = () => {
   const triggerLoadMore = useCallback(() => {
     fetchNextPage()
   }, [fetchNextPage])
-
 
   const onInputValueChange = useCallback(useDebounce((val: string) => {
     inputValueRef.current = val
@@ -44,6 +43,7 @@ export const useSearch = () => {
 
     data: data?.pages || [],
     isLoading,
-    error
+    error,
+    refetch
   }
 }
