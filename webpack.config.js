@@ -21,7 +21,7 @@ module.exports = (env, argv) => {
     mode,
     entry: ['@babel/polyfill', './src/index.tsx'],
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'build'),
       publicPath: isDevServer ? '/' : 'auto',
       filename: '[name].[hash].js'
     },
@@ -46,7 +46,7 @@ module.exports = (env, argv) => {
       new CopyWebpackPlugin({
         patterns: [{ 
           from: path.resolve(__dirname, 'public/assets'), 
-          to: path.resolve(__dirname, 'dist/assets')
+          to: path.resolve(__dirname, 'build/assets')
         }]
       }),
       new webpack.DefinePlugin(envs)
