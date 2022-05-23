@@ -1,5 +1,5 @@
 const path = require('path')
-const webpack = require('webpack')
+// const webpack = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HTMLWepbackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
@@ -49,7 +49,7 @@ module.exports = (env, argv) => {
           to: path.resolve(__dirname, 'build/assets')
         }]
       }),
-      new webpack.DefinePlugin(envs)
+      // new webpack.DefinePlugin(envs)
     ],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx'],
