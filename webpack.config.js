@@ -3,12 +3,13 @@ const webpack = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HTMLWepbackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const dotenv = require('dotenv').config()
+// const dotenv = require('dotenv').config()
+const Dotenv = require('dotenv-webpack');
 
-const envs = Object.entries(dotenv?.parsed || {}).reduce((obj, [key, val]) => {
-  obj[`process.env.${key}`] = JSON.stringify(val)
-  return obj
-}, {})
+// const envs = Object.entries(dotenv?.parsed || {}).reduce((obj, [key, val]) => {
+//   obj[`process.env.${key}`] = JSON.stringify(val)
+//   return obj
+// }, {})
 
 
 module.exports = (env, argv) => {
@@ -49,7 +50,8 @@ module.exports = (env, argv) => {
           to: path.resolve(__dirname, 'build/assets')
         }]
       }),
-      new webpack.DefinePlugin(envs)
+      new Dotenv({ systemvars: true })
+      // new webpack.DefinePlugin(envs)
     ],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx'],
