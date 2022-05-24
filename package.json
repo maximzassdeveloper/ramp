@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "heroku-postbuild": "webpack --config ./webpack.config.js --progress",
     "start": "webpack --mode development",
-    "build": "webpack --mode production",
+    "build": "node server/server.js",
     "test": "jest --detectOpenHandles",
     "server": "json-server --watch server/db.json --routes server/routes.json --port 5000"
   },

@@ -1,5 +1,6 @@
 const jsonServer = require('json-server');
 const path = require('path')
+const fs = require('fs')
 const server = jsonServer.create();
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
 const middlewares = jsonServer.defaults({
@@ -7,6 +8,16 @@ const middlewares = jsonServer.defaults({
 });
 
 const PORT = process.env.PORT || 3000;
+
+const curDir = path.resolve(__dirname)
+console.log(__dirname)
+fs.readdir(curDir, (err, files) => {
+  if (err) return console.log(err)
+
+  files.forEach(file => {
+    console.log(file)
+  })
+})
 
 server.use(middlewares);
 server.use(jsonServer.rewriter({
