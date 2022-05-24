@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "start": "webpack --mode development",
+    "start": "node server/server.js",
     "build": "webpack --mode production",
     "test": "jest --detectOpenHandles",
     "server": "json-server --watch server/db.json --routes server/routes.json --port 5000"
