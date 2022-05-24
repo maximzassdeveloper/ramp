@@ -9,15 +9,15 @@ const middlewares = jsonServer.defaults({
 
 const PORT = process.env.PORT || 3000;
 
-const curDir = path.resolve(__dirname, '..')
-console.log()
-fs.readdir(curDir, (err, files) => {
-  if (err) return console.log(err)
+// const curDir = path.resolve(__dirname, '..')
+// console.log()
+// fs.readdir(curDir, (err, files) => {
+//   if (err) return console.log(err)
 
-  files.forEach(file => {
-    console.log(file)
-  })
-})
+//   files.forEach(file => {
+//     console.log(file)
+//   })
+// })
 
 server.use(middlewares);
 server.use(jsonServer.rewriter({

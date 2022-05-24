@@ -5,7 +5,7 @@ const HTMLWepbackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const dotenv = require('dotenv').config()
 
-const envs = Object.entries(dotenv.parsed).reduce((obj, [key, val]) => {
+const envs = Object.entries(dotenv?.parsed || {}).reduce((obj, [key, val]) => {
   obj[`process.env.${key}`] = JSON.stringify(val)
   return obj
 }, {})
