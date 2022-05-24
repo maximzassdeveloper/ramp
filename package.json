@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "heroku-prebuild": "npm install --dev",
+    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress",
     "start": "webpack --mode development",
     "build": "webpack --mode production",
     "test": "jest --detectOpenHandles",
