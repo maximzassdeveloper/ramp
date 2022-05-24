@@ -9,8 +9,8 @@ const middlewares = jsonServer.defaults({
 
 const PORT = process.env.PORT || 3000;
 
-const curDir = path.resolve(__dirname)
-console.log(__dirname)
+const curDir = path.resolve(__dirname, '..')
+console.log()
 fs.readdir(curDir, (err, files) => {
   if (err) return console.log(err)
 
