@@ -28,10 +28,10 @@ export const createParams = (inputValue: string, filter: IFilter) => {
 
     switch (name) {
       case 'type':
-        params['type_like'] = value
+        params['type_like'] = JSON.stringify(value)
         return
       case 'categories':
-        params['categoryId_like'] = value
+        params['categoryId_like'] = JSON.stringify(value)
         return
       case 'year':
         params['year_gte'] = value[0]
