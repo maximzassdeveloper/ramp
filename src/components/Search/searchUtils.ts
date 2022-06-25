@@ -28,7 +28,7 @@ export const createParams = (inputValue: string, filter: IFilter) => {
 
     switch (name) {
       case 'type':
-        params['type_like'] = JSON.stringify(value)
+        params['type_like'] = value.length === 1 ? value[0] : `[${value.join(',')}]`
         return
       case 'categories':
         params['categoryId_like'] = JSON.stringify(value)
