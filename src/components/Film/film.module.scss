@@ -34,4 +34,14 @@
   font-size: 16px;
   color: #fff;
   font-weight: 400;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.type {
+  margin-top: 2px;
+  display: block;
+  color: $grey;
 }
